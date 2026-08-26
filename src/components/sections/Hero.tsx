@@ -49,7 +49,7 @@ export default function Hero() {
             className="flex flex-wrap items-center gap-4"
           >
             <Link
-              href={`/${locale}/day-1`}
+              href={`/${locale}/day/1`}
               className="group inline-flex h-12 items-center gap-2 rounded-[10px] bg-primary px-6 text-sm font-semibold text-primary-foreground transition-all hover:-translate-y-0.5"
             >
               <Play className="h-4 w-4 fill-current" />

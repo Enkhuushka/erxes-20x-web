@@ -10,11 +10,11 @@ import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { cn } from "@/lib/utils";
 
 const dayLinks = [
-  { key: "day1", slug: "day-1" },
-  { key: "day2", slug: "day-2" },
-  { key: "day3", slug: "day-3" },
-  { key: "day4", slug: "day-4" },
-  { key: "day5", slug: "day-5" },
+  { key: "day1", slug: "1" },
+  { key: "day2", slug: "2" },
+  { key: "day3", slug: "3" },
+  { key: "day4", slug: "4" },
+  { key: "day5", slug: "5" },
 ];
 
 const pageLinks = [
@@ -65,8 +65,8 @@ export default function Header() {
           {dayLinks.map((link) => (
             <DayNavLink
               key={link.slug}
-              href={`/${locale}/${link.slug}`}
-              active={isActive(`/${link.slug}`)}
+              href={`/${locale}/day/${link.slug}`}
+              active={isActive(`/day/${link.slug}`)}
             >
               {link.key.replace("day", "D")}
             </DayNavLink>
@@ -125,8 +125,8 @@ export default function Header() {
                 {dayLinks.map((link) => (
                   <MobileDayLink
                     key={link.slug}
-                    href={`/${locale}/${link.slug}`}
-                    active={isActive(`/${link.slug}`)}
+                    href={`/${locale}/day/${link.slug}`}
+                    active={isActive(`/day/${link.slug}`)}
                     onClick={() => setOpen(false)}
                   >
                     {link.key.replace("day", "D")}

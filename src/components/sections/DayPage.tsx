@@ -89,7 +89,7 @@ export default function DayPage({ day }: { day: DayData }) {
             <div className="flex items-center justify-between">
               {prev ? (
                 <Link
-                  href={`/${locale}/day-${prev}`}
+                  href={`/${locale}/day/${prev}`}
                   className="inline-flex h-12 items-center gap-2 rounded-[10px] border border-border bg-secondary px-5 text-sm font-semibold text-secondary-foreground transition-all hover:-translate-y-0.5"
                 >
                   <ArrowLeft className="h-4 w-4" />
@@ -100,7 +100,7 @@ export default function DayPage({ day }: { day: DayData }) {
               )}
               {next ? (
                 <Link
-                  href={`/${locale}/day-${next}`}
+                  href={`/${locale}/day/${next}`}
                   className="inline-flex h-12 items-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-semibold text-primary-foreground transition-all hover:-translate-y-0.5"
                 >
                   {t("next")}

@@ -97,7 +97,7 @@ function DayCard({
 
   return (
     <Link
-      href={`/${locale}/day-${id}`}
+      href={`/${locale}/day/${id}`}
       className="group relative flex h-full flex-col rounded-[16px] border border-border bg-card p-6 transition-all hover:-translate-y-1.5 hover:border-[#545454]"
     >
       <span className="absolute left-0 right-0 top-0 h-1 origin-left scale-x-[0.18] rounded-t-[16px] bg-primary transition-transform duration-220 group-hover:scale-x-100" />
