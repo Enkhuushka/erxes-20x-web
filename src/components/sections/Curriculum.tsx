@@ -9,28 +9,63 @@ import { ArrowRight } from "lucide-react";
 const days = [
   {
     id: 1,
-    mn: { title: "Intro · Basics", summary: "Setup, Discord, erxes, OpenCode, Paper, Pencil, erxes Skills install" },
-    en: { title: "Intro · Basics", summary: "Setup, Discord, erxes, OpenCode, Paper, Pencil, erxes Skills install" },
+    current: true,
+    mn: {
+      title: "Intro · Basics",
+      items: ["Intro", "Install", "erxes Skills install"],
+    },
+    en: {
+      title: "Intro · Basics",
+      items: ["Intro", "Install", "erxes Skills install"],
+    },
   },
   {
     id: 2,
-    mn: { title: "PRD + UX/UI", summary: "BRD/PRD бичих, UI/UX research, Design.md, front-end & deploy" },
-    en: { title: "PRD + UX/UI", summary: "Write BRD/PRD, UI/UX research, Design.md, front-end & deploy" },
+    current: false,
+    mn: {
+      title: "PRD + UX/UI",
+      items: ["PRD", "Design.md", "UX UI research"],
+    },
+    en: {
+      title: "PRD + UX/UI",
+      items: ["PRD", "Design.md", "UX UI research"],
+    },
   },
   {
     id: 3,
-    mn: { title: "Front-end", summary: "Сонгосон дизайны дагуу interface бүтээх" },
-    en: { title: "Front-end", summary: "Build the interface based on the approved design" },
+    current: false,
+    mn: {
+      title: "Front-end",
+      items: ["Build the interface"],
+    },
+    en: {
+      title: "Front-end",
+      items: ["Build the interface"],
+    },
   },
   {
     id: 4,
-    mn: { title: "Showoff", summary: "Бүтээсэн сайтаа demo хийх" },
-    en: { title: "Showoff", summary: "Demo the site you built" },
+    current: false,
+    mn: {
+      title: "Showoff",
+      items: ["Live demo session"],
+    },
+    en: {
+      title: "Showoff",
+      items: ["Live demo session"],
+    },
   },
   {
     id: 5,
-    mn: { title: "Graduation", summary: "Сертификат · эцсийн demo" },
-    en: { title: "Graduation", summary: "Certificate · final demo" },
+    current: false,
+    mn: {
+      title: "Graduation",
+      items: ["Сертификат · Demo"],
+    },
+    en: {
+      title: "Graduation",
+      items: ["Certificate · Demo"],
+    },
   },
 ];
 
@@ -57,7 +92,7 @@ export default function Curriculum() {
           <p className="text-lg text-muted-foreground">{t("lead")}</p>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {days.map((day, i) => {
             const content = day[locale as "mn" | "en"];
             return (
@@ -70,8 +105,9 @@ export default function Curriculum() {
                 <DayCard
                   locale={locale}
                   id={day.id}
+                  current={day.current}
                   title={content.title}
-                  summary={content.summary}
+                  items={content.items}
                 />
               </motion.div>
             );
@@ -85,45 +121,63 @@ export default function Curriculum() {
 function DayCard({
   locale,
   id,
+  current,
   title,
-  summary,
+  items,
 }: {
   locale: string;
   id: number;
+  current: boolean;
   title: string;
-  summary: string;
+  items: string[];
 }) {
   const t = useTranslations("curriculum");
 
   return (
     <Link
       href={`/${locale}/day/${id}`}
-      className="group relative flex h-full flex-col rounded-[16px] border border-border bg-card p-6 transition-all hover:-translate-y-1.5 hover:border-[#545454]"
+      className={`group relative flex h-full flex-col rounded-[16px] border p-5 transition-all hover:-translate-y-1 ${
+        current
+          ? "border-primary bg-primary/5 shadow-[0_0_24px_rgba(224,86,253,0.12)]"
+          : "border-border bg-card hover:border-primary/40"
+      }`}
     >
-      <span className="absolute left-0 right-0 top-0 h-1 origin-left scale-x-[0.18] rounded-t-[16px] bg-primary transition-transform duration-220 group-hover:scale-x-100" />
-      <div className="mb-4 flex items-center justify-between">
-        <span className="rounded-md bg-secondary px-2 py-1 font-mono text-xs font-bold text-secondary-foreground">
-          {t("day")} {id}
+      <div className="mb-3 flex items-start justify-between">
+        <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+          {t("day")}
         </span>
-        <span className="text-xs text-muted-foreground">{t("duration")}</span>
+        {current && (
+          <span className="rounded bg-primary px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary-foreground">
+            Today
+          </span>
+        )}
       </div>
-      <h3 className="mb-2 text-xl font-semibold text-foreground">{title}</h3>
-      <p className="mb-6 flex-1 text-sm leading-relaxed text-muted-foreground">
-        {summary}
+
+      <p
+        className={`mb-4 text-[clamp(3rem,6vw,5rem)] font-bold leading-none tracking-tight ${
+          current ? "text-primary" : "text-foreground"
+        }`}
+      >
+        {String(id).padStart(2, "0")}
       </p>
-      <div className="space-y-3">
-        <div className="h-1.5 w-full overflow-hidden rounded-full bg-input">
-          <div
-            className="h-full rounded-full bg-primary transition-all duration-300"
-            style={{ width: `${id * 20}%` }}
-          />
-        </div>
-        <div className="flex items-center justify-between text-xs text-muted-foreground">
-          <span>{t("progressLabel")}</span>
-          <span>{id * 20}%</span>
-        </div>
-      </div>
-      <div className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary">
+
+      <div className="mb-4 h-px bg-border" />
+
+      <h3 className="mb-3 text-lg font-bold text-foreground">{title}</h3>
+
+      <ul className="mb-5 flex-1 space-y-1.5">
+        {items.map((item, i) => (
+          <li
+            key={i}
+            className="flex items-start gap-2 text-sm text-muted-foreground"
+          >
+            <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-primary" />
+            {item}
+          </li>
+        ))}
+      </ul>
+
+      <div className="mt-auto inline-flex items-center gap-1 text-sm font-semibold text-primary">
         {t("viewDay")}
         <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
       </div>
