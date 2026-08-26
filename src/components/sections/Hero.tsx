@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { ArrowRight, Terminal, Play } from "lucide-react";
+import { ArrowRight, Terminal, Play, Check, Circle } from "lucide-react";
+import { dayDataMn, dayDataEn } from "@/lib/day-data";
 
 export default function Hero() {
   const locale = useLocale();
@@ -95,45 +96,128 @@ export default function Hero() {
 }
 
 function ConsoleVisual() {
+  const locale = useLocale();
+  const data = locale === "mn" ? dayDataMn : dayDataEn;
+  const currentDay = 1;
+  const completedDays = 0;
+  const totalDays = 5;
+  const progress = Math.round((completedDays / totalDays) * 100);
+
+  const days = Array.from({ length: totalDays }, (_, i) => {
+    const id = i + 1;
+    const day = data[id];
+    const [short, subtitle] = day.title.split(" — ");
+    return { id, short, subtitle, outcome: day.outcome };
+  });
+
   return (
-    <div className="rounded-[24px] border border-border bg-card p-5 shadow-[var(--shadow-console)]">
-      <div className="mb-4 flex items-center gap-2">
-        <span className="h-3 w-3 rounded-full bg-destructive" />
-        <span className="h-3 w-3 rounded-full bg-warning" />
-        <span className="h-3 w-3 rounded-full bg-success" />
-        <span className="ml-2 font-mono text-xs text-muted-foreground">
-          erxes-20x --course
-        </span>
-      </div>
-      <div className="space-y-3 font-mono text-sm">
-        <div className="flex items-start gap-3">
-          <span className="text-primary">$</span>
-          <div>
-            <p className="text-foreground">npx erxes-20x init --team alpha</p>
-            <p className="text-muted-foreground">Installing course modules...</p>
-            <p className="text-success">Done in 0.8s</p>
-          </div>
+    <div className="relative overflow-hidden rounded-[24px] border border-border bg-card p-1 shadow-[var(--shadow-console)]">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+      <div className="relative rounded-[20px] border border-border/50 bg-background/40 p-5 backdrop-blur-sm">
+        <div className="mb-5 flex items-center gap-2">
+          <span className="h-3 w-3 rounded-full bg-destructive" />
+          <span className="h-3 w-3 rounded-full bg-warning" />
+          <span className="h-3 w-3 rounded-full bg-success" />
+          <span className="ml-2 font-mono text-xs text-muted-foreground">
+            erxes-20x roadmap --locale {locale}
+          </span>
         </div>
-        <div className="flex items-start gap-3">
-          <span className="text-primary">$</span>
-          <div>
-            <p className="text-foreground">erxes run day-1</p>
-            <p className="text-accent">Starting Day 1: Intro · Basics</p>
-          </div>
-        </div>
-        <div className="flex items-start gap-3">
-          <span className="text-primary">$</span>
-          <div>
-            <p className="text-foreground">erxes progress --all</p>
-            <div className="mt-2 h-2 w-full max-w-[220px] overflow-hidden rounded-full bg-input">
-              <div className="h-full w-1/5 rounded-full bg-primary" />
+
+        <div className="space-y-4 font-mono text-sm">
+          <div className="flex items-start gap-3">
+            <span className="text-primary">$</span>
+            <div>
+              <p className="text-foreground">npx erxes-20x@latest init</p>
+              <p className="text-muted-foreground">Installing 5-day marketer course...</p>
+              <p className="text-success">Ready — 5 modules loaded</p>
             </div>
-            <p className="mt-1 text-xs text-muted-foreground">20% complete</p>
           </div>
-        </div>
-        <div className="rounded-md border border-border bg-background p-3">
-          <p className="text-xs text-muted-foreground">// next lesson</p>
-          <p className="text-foreground">Sales pipeline automation</p>
+
+          <div className="rounded-[16px] border border-border bg-card/60 p-4">
+            <p className="mb-3 text-xs font-bold uppercase tracking-wider text-primary">
+              {locale === "mn" ? "5 өдрийн хөтөлбөр" : "5-Day Roadmap"}
+            </p>
+            <div className="space-y-2">
+              {days.map((day) => {
+                const isCurrent = day.id === currentDay;
+                const isCompleted = day.id <= completedDays;
+                return (
+                  <Link
+                    key={day.id}
+                    href={`/${locale}/day/${day.id}`}
+                    className={`group flex items-center gap-3 rounded-xl border p-3 transition-all hover:-translate-y-0.5 ${
+                      isCurrent
+                        ? "border-primary/40 bg-primary/5 shadow-[0_0_20px_rgba(224,86,253,0.10)]"
+                        : isCompleted
+                        ? "border-success/30 bg-success/5"
+                        : "border-transparent bg-secondary/40 hover:border-primary/20"
+                    }`}
+                  >
+                    <span
+                      className={`flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg ${
+                        isCurrent
+                          ? "bg-primary text-primary-foreground"
+                          : isCompleted
+                          ? "bg-success text-background"
+                          : "bg-background text-muted-foreground"
+                      }`}
+                    >
+                      {isCompleted ? (
+                        <Check className="h-3.5 w-3.5" />
+                      ) : isCurrent ? (
+                        <Play className="h-3.5 w-3.5 fill-current" />
+                      ) : (
+                        <Circle className="h-3.5 w-3.5" />
+                      )}
+                    </span>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-2">
+                        <span className="font-bold text-foreground">{day.short}</span>
+                        {day.subtitle && (
+                          <span className="hidden truncate text-xs text-muted-foreground sm:inline">
+                            — {day.subtitle}
+                          </span>
+                        )}
+                      </div>
+                      <p className="truncate text-xs text-muted-foreground">{day.outcome}</p>
+                    </div>
+                    <span
+                      className={`rounded-md px-2 py-0.5 text-xs font-bold ${
+                        isCurrent
+                          ? "bg-primary text-primary-foreground"
+                          : "bg-secondary text-secondary-foreground"
+                      }`}
+                    >
+                      D{day.id}
+                    </span>
+                  </Link>
+                );
+              })}
+            </div>
+
+            <div className="mt-4">
+              <div className="mb-1.5 flex items-center justify-between text-xs">
+                <span className="text-muted-foreground">
+                  {locale === "mn" ? "Ажиглагдах прогресс" : "Overall progress"}
+                </span>
+                <span className="font-semibold text-primary">{progress}%</span>
+              </div>
+              <div className="h-2 w-full overflow-hidden rounded-full bg-input">
+                <div
+                  className="h-full rounded-full bg-gradient-to-r from-primary to-accent transition-all duration-500"
+                  style={{ width: `${progress}%` }}
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-3 rounded-md border border-border bg-background p-3">
+            <span className="text-primary">→</span>
+            <div>
+              <p className="text-xs text-muted-foreground">{locale === "mn" ? "Дараагийн алхам" : "Next step"}</p>
+              <p className="text-foreground">{locale === "mn" ? "Day 1: Intro & outcome-оос эхлэх" : "Start Day 1: Intro & outcome"}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
