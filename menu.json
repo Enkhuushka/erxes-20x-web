@@ -4,11 +4,11 @@
   { "label": "Сургалт", "url": "/services", "order": 3, "kind": "header", "translations": [{ "language": "en", "title": "Curriculum" }] },
   { "label": "Баг", "url": "/team", "order": 4, "kind": "header", "translations": [{ "language": "en", "title": "Team" }] },
   { "label": "Холбогдох", "url": "/contact", "order": 5, "kind": "header", "translations": [{ "language": "en", "title": "Contact" }] },
-  { "label": "Өдөр 1", "url": "/day-1", "order": 6, "kind": "header", "translations": [{ "language": "en", "title": "Day 1" }] },
-  { "label": "Өдөр 2", "url": "/day-2", "order": 7, "kind": "header", "translations": [{ "language": "en", "title": "Day 2" }] },
-  { "label": "Өдөр 3", "url": "/day-3", "order": 8, "kind": "header", "translations": [{ "language": "en", "title": "Day 3" }] },
-  { "label": "Өдөр 4", "url": "/day-4", "order": 9, "kind": "header", "translations": [{ "language": "en", "title": "Day 4" }] },
-  { "label": "Өдөр 5", "url": "/day-5", "order": 10, "kind": "header", "translations": [{ "language": "en", "title": "Day 5" }] },
+  { "label": "Өдөр 1", "url": "/day/1", "order": 6, "kind": "header", "translations": [{ "language": "en", "title": "Day 1" }] },
+  { "label": "Өдөр 2", "url": "/day/2", "order": 7, "kind": "header", "translations": [{ "language": "en", "title": "Day 2" }] },
+  { "label": "Өдөр 3", "url": "/day/3", "order": 8, "kind": "header", "translations": [{ "language": "en", "title": "Day 3" }] },
+  { "label": "Өдөр 4", "url": "/day/4", "order": 9, "kind": "header", "translations": [{ "language": "en", "title": "Day 4" }] },
+  { "label": "Өдөр 5", "url": "/day/5", "order": 10, "kind": "header", "translations": [{ "language": "en", "title": "Day 5" }] },
   { "label": "Нүүр", "url": "/", "order": 1, "kind": "footer", "translations": [{ "language": "en", "title": "Home" }] },
   { "label": "Холбогдох", "url": "/contact", "order": 2, "kind": "footer", "translations": [{ "language": "en", "title": "Contact" }] }
 ]
