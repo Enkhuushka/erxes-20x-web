@@ -16,7 +16,6 @@ export const dayDataMn: Record<number, DayData> = {
       {
         title: "Intro & outcome",
         desc: "5-Day 20x Marketer хөтөлбөрийн зорилго, багш MJ · Түвшинтөгс + Erica, өдөр бүрийн roadmap.",
-        code: "5-DAY 20x MARKETER · ROADMAP\nӨДӨР 01  Intro · Basics\nӨДӨР 02  PRD + UX/UI\nӨДӨР 03  Front-end\nӨДӨР 04  Showoff\nӨДӨР 05  Graduation",
         checkpoints: ["Хөтөлбөрийн зорилгыг ойлгосон", "5 өдрийн roadmap танилцсан", "Өнөөдрийн гол даалгавар тодорхой"],
       },
       {
@@ -182,7 +181,6 @@ export const dayDataEn: Record<number, DayData> = {
       {
         title: "Intro & outcome",
         desc: "5-Day 20x Marketer roadmap, instructors MJ · Tuvshintugs + Erica, what you’ll build each day.",
-        code: "5-DAY 20x MARKETER · ROADMAP\nDAY 01  Intro · Basics\nDAY 02  PRD + UX/UI\nDAY 03  Front-end\nDAY 04  Showoff\nDAY 05  Graduation",
         checkpoints: ["Understood the program goal", "Reviewed the 5-day roadmap", "Know today's main task"],
       },
       {
