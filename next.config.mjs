@@ -6,6 +6,9 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 const nextConfig = {
   images: {
     unoptimized: true,
+    remotePatterns: [
+      { protocol: "https", hostname: "api.qrserver.com", pathname: "/**" },
+    ],
   },
   env: {
     NEXT_PUBLIC_ERXES_ENDPOINT: "https://enkhee.next.erxes.io/gateway/graphql",
