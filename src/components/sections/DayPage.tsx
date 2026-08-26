@@ -4,7 +4,14 @@ import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, Check, CheckCheck, ExternalLink } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, CheckCheck, ExternalLink, Play, MessageCircle, Globe, Wrench, Puzzle, FileText, Palette, Code, Rocket, FileCode } from "lucide-react";
+
+export type AgendaItem = {
+  title: string;
+  desc: string;
+  icon: "play" | "message" | "globe" | "wrench" | "puzzle" | "file" | "palette" | "code" | "rocket" | "file-code";
+  main?: boolean;
+};
 
 export type Lesson = {
   title: string;
@@ -18,6 +25,7 @@ export type DayData = {
   title: string;
   outcome: string;
   lessons: Lesson[];
+  agenda?: AgendaItem[];
 };
 
 export default function DayPage({ day }: { day: DayData }) {
@@ -79,6 +87,8 @@ export default function DayPage({ day }: { day: DayData }) {
                 <p className="mt-1 text-muted-foreground">{day.outcome}</p>
               </div>
             </motion.div>
+
+            {day.agenda && day.agenda.length > 0 && <Agenda day={day} />}
 
             <div className="mb-12 space-y-6">
               {day.lessons.map((lesson, i) => (
@@ -215,6 +225,76 @@ function CodeBlock({ code }: { code: string }) {
         <code>{code}</code>
       </pre>
     </div>
+  );
+}
+
+function Agenda({ day }: { day: DayData }) {
+  const t = useTranslations("dayPage");
+
+  const iconMap: Record<AgendaItem["icon"], React.ElementType> = {
+    play: Play,
+    message: MessageCircle,
+    globe: Globe,
+    wrench: Wrench,
+    puzzle: Puzzle,
+    file: FileText,
+    palette: Palette,
+    code: Code,
+    rocket: Rocket,
+    "file-code": FileCode,
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, delay: 0.1 }}
+      className="mb-8 overflow-hidden rounded-[24px] border border-border bg-card p-6 md:p-10"
+    >
+      <div className="mb-6 flex items-center gap-2">
+        <span className="h-3 w-3 bg-primary" />
+        <span className="text-xs font-bold uppercase tracking-widest text-primary">
+          {t("agendaEyebrow", { day: day.id })}
+        </span>
+      </div>
+
+      <h2 className="mb-2 text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-foreground">
+        {t("agendaTitle")}
+      </h2>
+      <p className="mb-8 text-lg text-muted-foreground">{t("agendaLead")}</p>
+
+      <div className="space-y-3">
+        {day.agenda?.map((item, i) => {
+          const Icon = iconMap[item.icon];
+          return (
+            <div
+              key={i}
+              className={`relative flex items-center gap-4 rounded-[10px] p-4 transition-all hover:bg-primary/5 ${
+                item.main
+                  ? "border border-primary bg-primary/5 shadow-[0_0_20px_rgba(224,86,253,0.08)]"
+                  : "border border-border border-l-4 border-l-primary bg-background"
+              }`}
+            >
+              <span className="text-lg font-bold text-primary">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                <Icon className="h-5 w-5" />
+              </span>
+              <div className="min-w-0 flex-1">
+                <h3 className="text-base font-bold text-foreground">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">{item.desc}</p>
+              </div>
+              {item.main && (
+                <span className="hidden rounded bg-primary px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-primary-foreground sm:inline-block">
+                  {t("mainTask")}
+                </span>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </motion.div>
   );
 }
 

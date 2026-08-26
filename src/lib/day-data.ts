@@ -5,6 +5,13 @@ export const dayDataMn: Record<number, DayData> = {
     id: 1,
     title: "Intro · Basics — Setup & Skills install",
     outcome: "Setup-аас эхлээд эхний AI Skill-ээ ашиглах хүртэл бэлтгэсэн байх.",
+    agenda: [
+      { title: "Intro & outcome", desc: "Хөтөлбөрийн зорилго · юу сурах вэ?", icon: "play" },
+      { title: "Discord нэгдэх", desc: "discord.com · 20x Company channel", icon: "message" },
+      { title: "erxes-д нэгдэх", desc: "erxes.io · бүртгэл + erxes Content CMS үүсгэх", icon: "globe" },
+      { title: "Tools install", desc: "OpenCode · Pencil", icon: "wrench" },
+      { title: "erxes Skills install + ашиглах", desc: "ӨНӨӨДРИЙН ГОЛ ДААЛГАВАР", icon: "puzzle", main: true },
+    ],
     lessons: [
       {
         title: "Intro & outcome",
@@ -42,6 +49,13 @@ export const dayDataMn: Record<number, DayData> = {
     id: 2,
     title: "PRD + UX/UI — BRD & Design.md",
     outcome: "Өөрийн вэбийн BRD/PRD, UX/UI research, Design.md-г бэлдсэн байх.",
+    agenda: [
+      { title: "PRD/BRD бичих", desc: "Бүтээгдэхүүний шаардлага · use case", icon: "file" },
+      { title: "UI/UX + Pencil · MCP", desc: "Дизайн систем · components", icon: "palette" },
+      { title: "Front-end development", desc: "Front-end · polish · iterate", icon: "code" },
+      { title: "GitHub deploy", desc: "Сайтаар нийтлэх · CI/CD", icon: "rocket" },
+      { title: "Design.md", desc: "Reference · style guide", icon: "file-code", main: true },
+    ],
     lessons: [
       {
         title: "PRD/BRD бичих",
@@ -157,6 +171,13 @@ export const dayDataEn: Record<number, DayData> = {
     id: 1,
     title: "Intro · Basics — Setup & Skills Install",
     outcome: "Get set up from scratch and run your first erxes AI Skill.",
+    agenda: [
+      { title: "Intro & outcome", desc: "Program goal · what you'll learn", icon: "play" },
+      { title: "Join Discord", desc: "discord.com · 20x Company channel", icon: "message" },
+      { title: "Join erxes", desc: "erxes.io · register + create Content CMS", icon: "globe" },
+      { title: "Install tools", desc: "OpenCode · Pencil", icon: "wrench" },
+      { title: "Install & use erxes Skills", desc: "Today's main task", icon: "puzzle", main: true },
+    ],
     lessons: [
       {
         title: "Intro & outcome",
@@ -194,6 +215,13 @@ export const dayDataEn: Record<number, DayData> = {
     id: 2,
     title: "PRD + UX/UI — BRD & Design.md",
     outcome: "Prepare your BRD/PRD, UX/UI research, and Design.md for your website.",
+    agenda: [
+      { title: "Write PRD/BRD", desc: "Product requirements · use case", icon: "file" },
+      { title: "UI/UX + Pencil · MCP", desc: "Design system · components", icon: "palette" },
+      { title: "Front-end development", desc: "Build · polish · iterate", icon: "code" },
+      { title: "GitHub deploy", desc: "Publish site · CI/CD", icon: "rocket" },
+      { title: "Design.md", desc: "Reference · style guide", icon: "file-code", main: true },
+    ],
     lessons: [
       {
         title: "Write PRD/BRD",
