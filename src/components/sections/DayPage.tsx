@@ -218,11 +218,13 @@ function CodeBlock({ code }: { code: string }) {
 
 function UrlRow({ text, url }: { text: string; url: string }) {
   const t = useTranslations("dayPage");
+  const isDiscord = url.includes("discord.gg");
   const qr = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(
     url
   )}`;
+
   return (
-    <div className="flex flex-col gap-3 rounded-[10px] border border-border bg-card p-3 sm:flex-row sm:items-center sm:justify-between">
+    <div className="flex flex-col gap-4 rounded-[10px] border border-border bg-card p-4 sm:flex-row sm:items-start sm:justify-between">
       <div className="min-w-0 flex-1">
         <p className="truncate font-mono text-sm text-foreground">{text}</p>
         <a
@@ -234,40 +236,33 @@ function UrlRow({ text, url }: { text: string; url: string }) {
           {url}
           <ExternalLink className="h-3 w-3" />
         </a>
-      </div>
-        <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-between">
-          <div className="flex flex-col items-center gap-2 sm:items-start">
-            <a
-              href={url}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex h-9 items-center gap-1.5 rounded-md bg-primary px-3 text-xs font-semibold text-primary-foreground transition-all hover:-translate-y-0.5"
-            >
-              {t("openLink")}
-              <ExternalLink className="h-3.5 w-3.5" />
-            </a>
-            <a
-              href={url}
-              target="_blank"
-              rel="noreferrer"
-              className="break-all text-center text-xs text-muted-foreground transition-colors hover:text-primary sm:text-left"
-            >
-              {url}
-            </a>
-          </div>
-          <div className="flex flex-col items-center gap-1">
-            <img
-              src={qr}
-              alt={`QR for ${url}`}
-              width={160}
-              height={160}
-              className="rounded-lg border border-border bg-white p-1"
-            />
-            <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
-              {t("scan")}
-            </span>
-          </div>
+        <div className="mt-3">
+          <a
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex h-9 items-center gap-1.5 rounded-md bg-primary px-3 text-xs font-semibold text-primary-foreground transition-all hover:-translate-y-0.5"
+          >
+            {t("openLink")}
+            <ExternalLink className="h-3.5 w-3.5" />
+          </a>
         </div>
+      </div>
+
+      {isDiscord && (
+        <div className="flex flex-col items-center gap-1">
+          <img
+            src={qr}
+            alt={`QR for ${url}`}
+            width={200}
+            height={200}
+            className="rounded-lg border border-border bg-white p-1"
+          />
+          <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
+            {t("scan")}
+          </span>
+        </div>
+      )}
     </div>
   );
 }
