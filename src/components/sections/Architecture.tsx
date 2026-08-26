@@ -1,8 +1,6 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
 import {
   FileText,
   Palette,
@@ -14,53 +12,28 @@ import {
 
 export default function Architecture() {
   const t = useTranslations("architecture");
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section
-      ref={ref}
       id="architecture"
       className="border-y border-border bg-background-soft px-6 py-20 lg:px-10 lg:py-32"
     >
       <div className="mx-auto max-w-[1240px]">
         <div className="mb-12 max-w-2xl">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.4 }}
-            className="mb-3 flex items-center gap-2"
-          >
+          <div className="mb-3 flex items-center gap-2">
             <span className="h-3 w-3 bg-primary" />
             <span className="text-xs font-bold uppercase tracking-widest text-primary">
               {t("eyebrow")}
             </span>
-          </motion.div>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.4, delay: 0.1 }}
-            className="mb-4 text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-foreground"
-          >
+          </div>
+          <h2 className="mb-4 text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-foreground">
             {t("title")}
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.4, delay: 0.2 }}
-            className="text-lg italic text-muted-foreground"
-          >
-            {t("lead")}
-          </motion.p>
+          </h2>
+          <p className="text-lg italic text-muted-foreground">{t("lead")}</p>
         </div>
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="space-y-5"
-          >
+          <div className="space-y-5">
             <div className="rounded-[16px] border border-primary/40 bg-card p-5 shadow-[0_0_24px_rgba(224,86,253,0.06)]">
               <p className="mb-4 text-xs font-bold uppercase tracking-widest text-primary">
                 // {t("layer02")}
@@ -96,14 +69,9 @@ export default function Architecture() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="rounded-[16px] border border-border bg-card p-5"
-          >
+          <div className="rounded-[16px] border border-border bg-card p-5">
             <p className="mb-5 text-xs font-bold uppercase tracking-widest text-primary">
               // {t("workflow")}
             </p>
@@ -133,7 +101,7 @@ export default function Architecture() {
                 desc={t("step4Desc")}
               />
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
