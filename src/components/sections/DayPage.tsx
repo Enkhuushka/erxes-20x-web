@@ -248,7 +248,7 @@ function CodeBlock({ code }: { code: string }) {
 
 function UrlRow({ text, url }: { text: string; url: string }) {
   const t = useTranslations("dayPage");
-  const qr = `https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=${encodeURIComponent(
+  const qr = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(
     url
   )}`;
   return (
@@ -265,23 +265,33 @@ function UrlRow({ text, url }: { text: string; url: string }) {
           <ExternalLink className="h-3 w-3" />
         </a>
       </div>
-        <div className="flex items-center gap-3">
-          <a
-            href={url}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex h-9 items-center gap-1.5 rounded-md bg-primary px-3 text-xs font-semibold text-primary-foreground transition-all hover:-translate-y-0.5"
-          >
-            {t("openLink")}
-            <ExternalLink className="h-3.5 w-3.5" />
-          </a>
+        <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-between">
+          <div className="flex flex-col items-center gap-2 sm:items-start">
+            <a
+              href={url}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex h-9 items-center gap-1.5 rounded-md bg-primary px-3 text-xs font-semibold text-primary-foreground transition-all hover:-translate-y-0.5"
+            >
+              {t("openLink")}
+              <ExternalLink className="h-3.5 w-3.5" />
+            </a>
+            <a
+              href={url}
+              target="_blank"
+              rel="noreferrer"
+              className="break-all text-center text-xs text-muted-foreground transition-colors hover:text-primary sm:text-left"
+            >
+              {url}
+            </a>
+          </div>
           <div className="flex flex-col items-center gap-1">
             <img
               src={qr}
               alt={`QR for ${url}`}
-              width={56}
-              height={56}
-              className="rounded-md border border-border bg-white p-0.5"
+              width={160}
+              height={160}
+              className="rounded-lg border border-border bg-white p-1"
             />
             <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
               {t("scan")}
