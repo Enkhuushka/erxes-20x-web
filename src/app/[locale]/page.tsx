@@ -2,7 +2,6 @@ import { getTranslations } from "next-intl/server";
 import Hero from "@/components/sections/Hero";
 import Stats from "@/components/sections/Stats";
 import Curriculum from "@/components/sections/Curriculum";
-import Method from "@/components/sections/Method";
 import CtaBanner from "@/components/sections/CtaBanner";
 
 export async function generateMetadata({
@@ -24,7 +23,6 @@ export default function Home() {
       <Hero />
       <Stats />
       <Curriculum />
-      <Method />
       <CtaBanner />
     </>
   );
