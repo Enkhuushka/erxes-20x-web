@@ -26,9 +26,9 @@ export const dayDataMn: Record<number, DayData> = {
       },
       {
         title: "Tools install",
-        desc: "OpenCode, Paper, Pencil хэрэгсэлүүдийг татан суулгах.",
-        code: "OpenCode → https://opencode.ai\nPaper    → https://paper.design\nPencil   → https://www.pencil.dev",
-        checkpoints: ["OpenCode суулгасан", "Paper суулгасан", "Pencil суулгасан"],
+        desc: "OpenCode, Pencil хэрэгсэлүүдийг татан суулгах.",
+        code: "OpenCode → https://opencode.ai\nPencil → https://www.pencil.dev",
+        checkpoints: ["OpenCode суулгасан", "Pencil суулгасан"],
       },
       {
         title: "erxes Skills install + ашиглах",
@@ -50,9 +50,9 @@ export const dayDataMn: Record<number, DayData> = {
         checkpoints: ["Use case тодорхойлсон", "Sitemap / navigation бичсэн", "BRD холбоосыг хадгалсан"],
       },
       {
-        title: "UI/UX + Pencil & Paper · MCP",
-        desc: "Дизайн систем, components, Pencil & Paper ашиглан homepage direction, visual direction сонгох.",
-        code: "https://styles.refero.design/\nPaper  → https://paper.design\nPencil → https://www.pencil.dev",
+        title: "UI/UX + Pencil · MCP",
+        desc: "Дизайн систем, components, Pencil ашиглан homepage direction, visual direction сонгох.",
+        code: "https://styles.refero.design/\nPencil → https://www.pencil.dev",
         checkpoints: ["UX/UI research хийсэн", "Visual direction сонгосон", "Pencil дээр homepage direction эхлүүлсэн"],
       },
       {
@@ -178,9 +178,9 @@ export const dayDataEn: Record<number, DayData> = {
       },
       {
         title: "Install tools",
-        desc: "Download and install OpenCode, Paper, and Pencil.",
-        code: "OpenCode → https://opencode.ai\nPaper    → https://paper.design\nPencil   → https://www.pencil.dev",
-        checkpoints: ["Installed OpenCode", "Installed Paper", "Installed Pencil"],
+        desc: "Download and install OpenCode and Pencil.",
+        code: "OpenCode → https://opencode.ai\nPencil → https://www.pencil.dev",
+        checkpoints: ["Installed OpenCode", "Installed Pencil"],
       },
       {
         title: "Install & use erxes Skills",
@@ -202,9 +202,9 @@ export const dayDataEn: Record<number, DayData> = {
         checkpoints: ["Defined use cases", "Drafted sitemap/navigation", "Saved BRD link"],
       },
       {
-        title: "UI/UX + Pencil & Paper · MCP",
-        desc: "Design system, components, use Pencil & Paper to create homepage directions and pick a visual direction. Reference:",
-        code: "https://styles.refero.design/\nPaper  → https://paper.design\nPencil → https://www.pencil.dev",
+        title: "UI/UX + Pencil · MCP",
+        desc: "Design system, components, use Pencil to create homepage directions and pick a visual direction. Reference:",
+        code: "https://styles.refero.design/\nPencil → https://www.pencil.dev",
         checkpoints: ["Did UX/UI research", "Chose a visual direction", "Started homepage directions in Pencil"],
       },
       {

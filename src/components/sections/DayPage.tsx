@@ -184,22 +184,24 @@ function CodeBlock({ code }: { code: string }) {
     return { text: line, url: match ? match[1] : null };
   });
   const hasUrl = lines.some((l) => l.url);
+  const urlLines = lines.filter((l): l is { text: string; url: string } => !!l.url);
+  const nonUrlLines = lines.filter((l) => !l.url && l.text);
+  const useGrid = urlLines.length > 1 && nonUrlLines.length === 0;
 
   if (hasUrl) {
     return (
-      <div className="space-y-3 rounded-[10px] border border-border bg-background p-4">
-        {lines.map((line, i) =>
-          line.url ? (
-            <UrlRow key={i} text={line.text} url={line.url} />
-          ) : line.text ? (
-            <pre
-              key={i}
-              className="overflow-x-auto font-mono text-sm text-foreground"
-            >
-              <code>{line.text}</code>
-            </pre>
-          ) : null
-        )}
+      <div className={`rounded-[10px] border border-border bg-background p-4 ${useGrid ? "grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3" : "space-y-3"}`}>
+        {urlLines.map((line, i) => (
+          <UrlRow key={i} text={line.text} url={line.url} />
+        ))}
+        {nonUrlLines.map((line, i) => (
+          <pre
+            key={`nonurl-${i}`}
+            className="overflow-x-auto font-mono text-sm text-foreground"
+          >
+            <code>{line.text}</code>
+          </pre>
+        ))}
       </div>
     );
   }
@@ -222,47 +224,49 @@ function UrlRow({ text, url }: { text: string; url: string }) {
   const qr = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(
     url
   )}`;
+  const label = text.split(" → ")[0] || "";
 
   return (
-    <div className="flex flex-col gap-4 rounded-[10px] border border-border bg-card p-4 sm:flex-row sm:items-start sm:justify-between">
+    <div className="flex flex-col gap-3 rounded-[10px] border border-border bg-card p-4 sm:flex-row sm:items-center sm:justify-between">
       <div className="min-w-0 flex-1">
-        <p className="truncate font-mono text-sm text-foreground">{text}</p>
+        {label && label !== url ? (
+          <p className="text-base font-semibold text-foreground">{label}</p>
+        ) : null}
         <a
           href={url}
           target="_blank"
           rel="noreferrer"
-          className="mt-1 inline-flex items-center gap-1 text-xs font-semibold text-primary transition-colors hover:underline"
+          className="mt-0.5 inline-flex items-center gap-1 break-all text-xs font-semibold text-primary transition-colors hover:underline"
         >
           {url}
           <ExternalLink className="h-3 w-3" />
         </a>
-        <div className="mt-3">
-          <a
-            href={url}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex h-9 items-center gap-1.5 rounded-md bg-primary px-3 text-xs font-semibold text-primary-foreground transition-all hover:-translate-y-0.5"
-          >
-            {t("openLink")}
-            <ExternalLink className="h-3.5 w-3.5" />
-          </a>
-        </div>
       </div>
-
-      {isDiscord && (
-        <div className="flex flex-col items-center gap-1">
-          <img
-            src={qr}
-            alt={`QR for ${url}`}
-            width={200}
-            height={200}
-            className="rounded-lg border border-border bg-white p-1"
-          />
-          <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
-            {t("scan")}
-          </span>
-        </div>
-      )}
+      <div className="flex items-center gap-3">
+        <a
+          href={url}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex h-9 items-center gap-1.5 rounded-md bg-primary px-3 text-xs font-semibold text-primary-foreground transition-all hover:-translate-y-0.5"
+        >
+          {t("openLink")}
+          <ExternalLink className="h-3.5 w-3.5" />
+        </a>
+        {isDiscord && (
+          <div className="flex flex-col items-center gap-1">
+            <img
+              src={qr}
+              alt={`QR for ${url}`}
+              width={120}
+              height={120}
+              className="rounded-lg border border-border bg-white p-1"
+            />
+            <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
+              {t("scan")}
+            </span>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
