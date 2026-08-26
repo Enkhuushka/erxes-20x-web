@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "siteName": "erxes-20x-web",
+    "visualDirection": "dark-course-terminal",
+    "motionLevel": 3,
+    "defaultLocale": "mn",
+    "locales": ["mn", "en"]
+  },
+  "colors": {
+    "brand": {
+      "lime": "#d8ff00",
+      "cyan": "#a5f3fc"
+    },
+    "neutral": {
+      "bg": "#0a0a0a",
+      "bgSoft": "#101010",
+      "panel": "#161616",
+      "panelRaised": "#1d1d1d",
+      "line": "#323232",
+      "lineSoft": "#242424",
+      "ink": "#f5f5f5",
+      "muted": "#adadad",
+      "dim": "#777777"
+    },
+    "semantic": {
+      "background": "#0a0a0a",
+      "foreground": "#f5f5f5",
+      "card": "#161616",
+      "cardForeground": "#f5f5f5",
+      "popover": "#161616",
+      "popoverForeground": "#f5f5f5",
+      "primary": "#d8ff00",
+      "primaryForeground": "#0a0a0a",
+      "secondary": "#1d1d1d",
+      "secondaryForeground": "#f5f5f5",
+      "muted": "#101010",
+      "mutedForeground": "#adadad",
+      "accent": "#a5f3fc",
+      "accentForeground": "#0a0a0a",
+      "border": "#323232",
+      "input": "#242424",
+      "ring": "#a5f3fc",
+      "success": "#4ade80",
+      "warning": "#f97316",
+      "destructive": "#ef4444"
+    }
+  },
+  "typography": {
+    "families": {
+      "display": "Inter",
+      "body": "Inter",
+      "mono": "SFMono-Regular, Consolas, Menlo, monospace"
+    },
+    "scale": {
+      "hero": "clamp(48px, 6vw, 86px)",
+      "h1": "clamp(46px, 6vw, 78px)",
+      "h2": "clamp(34px, 4vw, 54px)",
+      "h3": "25px",
+      "body": "15px",
+      "small": "12px",
+      "eyebrow": "10px"
+    }
+  },
+  "spacing": {
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "48px",
+      "2xl": "80px",
+      "3xl": "126px"
+    },
+    "layout": {
+      "maxWidth": "1240px",
+      "gutter": "40px",
+      "mobileGutter": "28px"
+    }
+  },
+  "radius": {
+    "sm": "10px",
+    "md": "16px",
+    "lg": "24px"
+  },
+  "shadows": {
+    "cardHover": "0 18px 60px rgba(0, 0, 0, 0.16)",
+    "console": "0 35px 100px rgba(0, 0, 0, 0.45)"
+  },
+  "motion": {
+    "duration": {
+      "fast": "0.16s",
+      "normal": "0.18s",
+      "slow": "0.22s",
+      "progress": "0.3s"
+    },
+    "easing": {
+      "default": "ease",
+      "smooth": "cubic-bezier(0.4, 0, 0.2, 1)"
+    },
+    "spring_configs": {
+      "cardHover": { "stiffness": 300, "damping": 25 }
+    },
+    "variants": {
+      "cardHover": { "y": -6, "borderColor": "#545454" },
+      "buttonHover": { "y": -2 },
+      "fadeIn": { "opacity": [0, 1], "duration": 0.5 }
+    },
+    "gsap_configs": {}
+  }
+}

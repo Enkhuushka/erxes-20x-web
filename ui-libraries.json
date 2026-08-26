@@ -1,0 +1,34 @@
+{
+  "motion_level": 3,
+  "visual_direction": "dark-course-terminal",
+  "packages": [
+    "framer-motion",
+    "lenis",
+    "clsx",
+    "tailwind-merge",
+    "lucide-react",
+    "next-themes"
+  ],
+  "shadcn_components": [],
+  "custom_components": [
+    "Header with day nav and language switch",
+    "Hero with terminal/console visual",
+    "Course stats bar with progress ring",
+    "Day curriculum card grid",
+    "Method list",
+    "CTA banner",
+    "Minimal footer",
+    "Day page layout with sidebar and lessons",
+    "Code window with copy button",
+    "Lesson card with checkpoint"
+  ],
+  "animation_config": {
+    "core_library": "framer-motion",
+    "scroll_library": "lenis",
+    "text_animation": "custom",
+    "page_transition": "framer",
+    "ambient_system": "css",
+    "micro_interactions": "framer-motion",
+    "gsap_plugins": []
+  }
+}

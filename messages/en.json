@@ -1,0 +1,125 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Course",
+    "team": "Team",
+    "contact": "Contact",
+    "day1": "Day 1",
+    "day2": "Day 2",
+    "day3": "Day 3",
+    "day4": "Day 4",
+    "day5": "Day 5",
+    "languageLabel": "Language",
+    "switchTo": "Монгол",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "hero": {
+    "eyebrow": "erxes 20x — 5-day training",
+    "title": "Build your CRM 20x faster with erxes",
+    "lead": "A hands-on 5-day course on sales, marketing, and service automation using the erxes platform.",
+    "start": "Start Learning",
+    "learnMore": "Learn More",
+    "tag1": "No-code",
+    "tag2": "Automation",
+    "tag3": "CRM"
+  },
+  "stats": {
+    "title": "At a glance",
+    "days": "5 days",
+    "daysLabel": "Program length",
+    "hours": "30+ hours",
+    "hoursLabel": "Hands-on practice",
+    "modules": "12 modules",
+    "modulesLabel": "Course content",
+    "progress": "0%",
+    "progressLabel": "Ready to start"
+  },
+  "curriculum": {
+    "eyebrow": "CURRICULUM",
+    "title": "5 days, 12 modules",
+    "lead": "Each day has a unique focus, practical exercises, and checkpoints. Pick the day you need and start learning.",
+    "viewDay": "View",
+    "day": "Day",
+    "duration": "6 hrs",
+    "progressLabel": "Progress"
+  },
+  "method": {
+    "eyebrow": "LEARNING METHOD",
+    "title": "How we teach",
+    "lead": "We focus on real work, not theory. Learn by building in your own workspace.",
+    "items": {
+      "1": {
+        "title": "Live demo",
+        "desc": "Instructor walks through real erxes workflows live."
+      },
+      "2": {
+        "title": "Hands-on exercises",
+        "desc": "Rebuild each step in your own workspace to lock in the skill."
+      },
+      "3": {
+        "title": "Team project",
+        "desc": "Collaborate on a real case study with your group."
+      },
+      "4": {
+        "title": "Code/command cheat sheet",
+        "desc": "Copy-ready commands, snippets, and scripts."
+      },
+      "5": {
+        "title": "Q&A + quiz",
+        "desc": "Daily Q&A and short quizzes to keep you on track."
+      }
+    }
+  },
+  "cta": {
+    "title": "Ready to upgrade your team CRM today?",
+    "lead": "Register for the course and start building with erxes.",
+    "button": "Register",
+    "contact": "Contact us"
+  },
+  "footer": {
+    "copyright": "© 2026 erxes 20x. All rights reserved.",
+    "contact": "Contact",
+    "privacy": "Privacy"
+  },
+  "dayPage": {
+    "back": "Back",
+    "next": "Next day",
+    "prev": "Previous day",
+    "day": "Day",
+    "duration": "6 hrs",
+    "outcome": "Outcome",
+    "lessons": "Lessons",
+    "copy": "Copy",
+    "copied": "Copied",
+    "checkpoint": "Checkpoint",
+    "complete": "Complete",
+    "completed": "Done",
+    "notFound": "Day page not found.",
+    "goHome": "Go home"
+  },
+  "contact": {
+    "title": "Contact",
+    "lead": "Questions about the course? We'd love to help.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Send",
+    "sending": "Sending...",
+    "success": "Thanks! We'll be in touch soon.",
+    "error": "Something went wrong. Please try again.",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone"
+  },
+  "meta": {
+    "homeTitle": "erxes 20x — 5-day course",
+    "homeDescription": "5 days, 30+ hours of hands-on erxes CRM training. No-code automation, sales, marketing, and service.",
+    "defaultTitle": "erxes 20x"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "message": "This page could not be found. Would you like to go back home?",
+    "goHome": "Go back home"
+  }
+}

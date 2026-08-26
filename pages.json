@@ -1,0 +1,102 @@
+[
+  {
+    "section": "home",
+    "name": "Нүүр",
+    "slug": "home",
+    "description": "erxes 20x marketer сургалтын нүүр хуудас",
+    "content": "<p>5 өдрийн практик сургалт — erxes платформыг ашиглан маркетингийн кампанит ажил зохион байгуулж, үр дүнг хэмжих чадварыг эзэмшинэ.</p>",
+    "translations": [
+      { "language": "en", "title": "Home", "content": "<p>A five-day practical course — learn to run and measure marketing campaigns with the erxes platform.</p>" }
+    ]
+  },
+  {
+    "section": "about",
+    "name": "Бидний тухай",
+    "slug": "about",
+    "description": "Сургалтын зорилго, баг, арга зүй",
+    "content": "<h2>Бидний тухай</h2><p>erxes 20x marketer сургалт нь маркетеруудад зориулсан, гарданг дагаж хийх 5 өдрийн хөтөлбөр юм. Бид платформын үндсээс эхлээд автоматжуулалт, тайлангийн хүртэл бүх чухал чадварыг заана.</p><p>Өдөр бүр нэг тодорхой үр дүнд хүрнэ: өмнөх өдрийн мэдлэгийг ашиглан дараагийн алхмыг авах боломжтой.</p>",
+    "translations": [
+      { "language": "en", "title": "About Us", "content": "<h2>About the course</h2><p>erxes 20x marketer is a five-day, hands-on training program for marketers. We cover everything from platform basics to automation and reporting.</p><p>Each day has one clear outcome, building on the previous day so you can move forward with confidence.</p>" }
+    ]
+  },
+  {
+    "section": "services",
+    "name": "Сургалтын хөтөлбөр",
+    "slug": "services",
+    "description": "5 өдрийн сургалтын хөтөлбөрийн товч",
+    "content": "<h2>Сургалтын хөтөлбөр</h2><ul><li>Өдөр 1: Үндэс — ажлын орчин бэлдэх</li><li>Өдөр 2: Харилцагч — хүртээмж, сегмент</li><li>Өдөр 3: Кампанит ажил — имэйл, мессенжер</li><li>Өдөр 4: Автоматжуулалт — workflow</li><li>Өдөр 5: Тайлан, KPI</li></ul>",
+    "translations": [
+      { "language": "en", "title": "Curriculum", "content": "<h2>Curriculum</h2><ul><li>Day 1: Foundations — prepare your workspace</li><li>Day 2: Audience — segments and contacts</li><li>Day 3: Campaigns — email and messenger</li><li>Day 4: Automation — build workflows</li><li>Day 5: Reporting and KPIs</li></ul>" }
+    ]
+  },
+  {
+    "section": "team",
+    "name": "Баг",
+    "slug": "team",
+    "description": "Сургалтын багийн гишүүд",
+    "content": "<h2>Багийн гишүүд</h2><p>Бидний баг нь erxes платформыг олон жил ашигласан туршлагатай маркетер, инженеруудын бүрэлдэхүүнтэй.</p>",
+    "translations": [
+      { "language": "en", "title": "Team", "content": "<h2>Our team</h2><p>Our team includes marketers and engineers with years of hands-on experience using the erxes platform.</p>" }
+    ]
+  },
+  {
+    "section": "contact",
+    "name": "Холбогдох",
+    "slug": "contact",
+    "description": "Холбогдох мэдээлэл",
+    "content": "<h2>Холбогдох</h2><p>Сургалтын талаар нэмэлт мэдээлэл авахыг хүсвэл бидэнтэй холбогдоно уу.</p><p>Email: training@erxes.io</p>",
+    "translations": [
+      { "language": "en", "title": "Contact", "content": "<h2>Contact</h2><p>Get in touch for more information about the course.</p><p>Email: training@erxes.io</p>" }
+    ]
+  },
+  {
+    "section": "day-1",
+    "name": "Өдөр 1 — Үндэс",
+    "slug": "day-1",
+    "description": "Ажлын орчин бэлдэх, платформын ерөнхий бүтэц",
+    "content": "<h2>Өдөр 1: Үндэс</h2><p>erxes платформыг нээнэ. Багийн тохиргоо, хэрэглэгчийн эрх, үндсэн дашборд, модуль бүрийн үүргийг ойлгоно.</p><ul><li>erxes-ийн бүтэц</li><li>Дашборд танилцуулга</li><li>Хэрэглэгчийн эрх</li><li>Ажлын орчин бэлдэх checklist</li></ul>",
+    "translations": [
+      { "language": "en", "title": "Day 1 — Foundations", "content": "<h2>Day 1: Foundations</h2><p>Open the erxes platform. Learn team setup, user roles, the main dashboard, and what each module does.</p><ul><li>erxes structure</li><li>Dashboard overview</li><li>User roles</li><li>Workspace setup checklist</li></ul>" }
+    ]
+  },
+  {
+    "section": "day-2",
+    "name": "Өдөр 2 — Харилцагч",
+    "slug": "day-2",
+    "description": "Харилцагчийн сегмент, импорт, аялал",
+    "content": "<h2>Өдөр 2: Харилцагч</h2><p>Харилцагчийн өгөгдөл импортлох, сегмент үүсгэх, хэрэглэгчийн аяллыг газрын зураглах.</p><ul><li>Контакт импорт</li><li>Сегмент үүсгэх</li><li>Customer journey map</li><li>Таг, шинж чанар ашиглах</li></ul>",
+    "translations": [
+      { "language": "en", "title": "Day 2 — Audience", "content": "<h2>Day 2: Audience</h2><p>Import contacts, create segments, and map the customer journey.</p><ul><li>Contact import</li><li>Segment creation</li><li>Customer journey map</li><li>Tags and properties</li></ul>" }
+    ]
+  },
+  {
+    "section": "day-3",
+    "name": "Өдөр 3 — Кампанит ажил",
+    "slug": "day-3",
+    "description": "Имэйл, SMS, мессенжер кампанит ажил бүтээх",
+    "content": "<h2>Өдөр 3: Кампанит ажил</h2><p>Бодит загвараас эхлээд имэйл, мессенжер кампанит ажил үүсгэж, илгээх.</p><ul><li>Кампанийн зорилго тодорхойлох</li><li>Template сонгох</li><li>Илгээх хуваарь</li><li>Нээлт, хөрвөлтийн анхан шатны хэмжүүр</li></ul>",
+    "translations": [
+      { "language": "en", "title": "Day 3 — Campaigns", "content": "<h2>Day 3: Campaigns</h2><p>Create and send email and messenger campaigns using real templates.</p><ul><li>Define campaign goal</li><li>Choose a template</li><li>Schedule delivery</li><li>Open and conversion basics</li></ul>" }
+    ]
+  },
+  {
+    "section": "day-4",
+    "name": "Өдөр 4 — Автоматжуулалт",
+    "slug": "day-4",
+    "description": "Workflow үүсгэх, trigger, action, нөхцөл",
+    "content": "<h2>Өдөр 4: Автоматжуулалт</h2><p>Trigger, action, нөхцөлөөс бүрдэх workflow бүтээж, давтамжтай ажлуудыг автоматжуулах.</p><ul><li>Workflow editor</li><li>Trigger сонгох</li><li>Action нэмэх</li><li>Нөхцөл, салалт</li></ul>",
+    "translations": [
+      { "language": "en", "title": "Day 4 — Automation", "content": "<h2>Day 4: Automation</h2><p>Build workflows from triggers, actions, and branches to automate repetitive tasks.</p><ul><li>Workflow editor</li><li>Choose triggers</li><li>Add actions</li><li>Conditions and branches</li></ul>" }
+    ]
+  },
+  {
+    "section": "day-5",
+    "name": "Өдөр 5 — Тайлан",
+    "slug": "day-5",
+    "description": "Тайлан унших, KPI тодорхойлох, үр дүн тайлбарлах",
+    "content": "<h2>Өдөр 5: Тайлан</h2><p>Reports хэсгээс өгөгдөл уншиж, KPI-аа тохируулж, багийн өмнө тайлан тавих.</p><ul><li>Үндсэн метрикүүд</li><li>Dashboard customization</li><li>KPI board</li><li>Presentation checklist</li></ul>",
+    "translations": [
+      { "language": "en", "title": "Day 5 — Reporting", "content": "<h2>Day 5: Reporting</h2><p>Read reports, set your KPIs, and present results to your team.</p><ul><li>Key metrics</li><li>Dashboard customization</li><li>KPI board</li><li>Presentation checklist</li></ul>" }
+    ]
+  }
+]

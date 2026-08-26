@@ -1,0 +1,29 @@
+{
+  "site": "erxes-app.vercel.app",
+  "start_url": "https://erxes-app.vercel.app/day/1",
+  "audited_at": "2026-08-26T04:47:24.685Z",
+  "locales": [
+    "en"
+  ],
+  "audited_pages": [
+    {
+      "url": "https://erxes-app.vercel.app/day/1",
+      "pathname": "/day/1",
+      "title": "erxes app",
+      "description": "A five-day beginner course for building an erxes Expo mobile app with Codex.",
+      "locale": null,
+      "html_lang": "en",
+      "headings": [],
+      "cta_labels": [],
+      "text_blocks": [],
+      "links": [],
+      "contact": {
+        "emails": [],
+        "phones": []
+      },
+      "source": "seed"
+    }
+  ],
+  "discovered_pages": [],
+  "skipped_pages": []
+}
