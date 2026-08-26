@@ -9,28 +9,28 @@ import { ArrowRight } from "lucide-react";
 const days = [
   {
     id: 1,
-    mn: { title: "CRM үндэс", summary: "erxes орчин, хэрэглэгчийн бүртгэл, lead удирдлага" },
-    en: { title: "CRM Foundations", summary: "erxes workspace, contacts, lead management" },
+    mn: { title: "Intro · Basics", summary: "Setup, Discord, erxes, OpenCode, Paper, Pencil, erxes Skills install" },
+    en: { title: "Intro · Basics", summary: "Setup, Discord, erxes, OpenCode, Paper, Pencil, erxes Skills install" },
   },
   {
     id: 2,
-    mn: { title: "Борлуулалтын хөтөлбөр", summary: "Pipeline, deal stage, автоматжуулалт" },
-    en: { title: "Sales Pipeline", summary: "Pipeline stages, deals, automation rules" },
+    mn: { title: "PRD + UX/UI", summary: "BRD/PRD бичих, UI/UX research, Design.md, front-end & deploy" },
+    en: { title: "PRD + UX/UI", summary: "Write BRD/PRD, UI/UX research, Design.md, front-end & deploy" },
   },
   {
     id: 3,
-    mn: { title: "Маркетингийн кампанит ажил", summary: "Segment, campaign, email, харилцагчийн зам" },
-    en: { title: "Marketing Campaigns", summary: "Segments, campaigns, email flows" },
+    mn: { title: "Front-end", summary: "Сонгосон дизайны дагуу interface бүтээх" },
+    en: { title: "Front-end", summary: "Build the interface based on the approved design" },
   },
   {
     id: 4,
-    mn: { title: "Үйлчилгээний төв", summary: "Ticket, knowledge base, chatbot холболт" },
-    en: { title: "Service Center", summary: "Tickets, knowledge base, chatbot integration" },
+    mn: { title: "Showoff", summary: "Бүтээсэн сайтаа demo хийх" },
+    en: { title: "Showoff", summary: "Demo the site you built" },
   },
   {
     id: 5,
-    mn: { title: "Тайлан ба өргөтгөл", summary: "Dashboard, plugin, командад нэгтгэх" },
-    en: { title: "Reporting & Extensions", summary: "Dashboards, plugins, team rollout" },
+    mn: { title: "Graduation", summary: "Сертификат · эцсийн demo" },
+    en: { title: "Graduation", summary: "Certificate · final demo" },
   },
 ];
 

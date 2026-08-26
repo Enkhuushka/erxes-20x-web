@@ -118,7 +118,7 @@ function ConsoleVisual() {
           <span className="text-primary">$</span>
           <div>
             <p className="text-foreground">erxes run day-1</p>
-            <p className="text-accent">Starting Day 1: CRM foundations</p>
+            <p className="text-accent">Starting Day 1: Intro · Basics</p>
           </div>
         </div>
         <div className="flex items-start gap-3">
