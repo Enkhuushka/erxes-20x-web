@@ -5,7 +5,6 @@ import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Check, Copy, CheckCheck, ExternalLink } from "lucide-react";
-import Image from "@/components/common/Image";
 
 export type Lesson = {
   title: string;
@@ -266,30 +265,29 @@ function UrlRow({ text, url }: { text: string; url: string }) {
           <ExternalLink className="h-3 w-3" />
         </a>
       </div>
-      <div className="flex items-center gap-3">
-        <a
-          href={url}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex h-9 items-center gap-1.5 rounded-md bg-primary px-3 text-xs font-semibold text-primary-foreground transition-all hover:-translate-y-0.5"
-        >
-          {t("openLink")}
-          <ExternalLink className="h-3.5 w-3.5" />
-        </a>
-        <div className="flex flex-col items-center gap-1">
-          <Image
-            src={qr}
-            alt={`QR for ${url}`}
-            width={56}
-            height={56}
-            className="rounded-md border border-border bg-white p-0.5"
-            unoptimized
-          />
-          <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
-            {t("scan")}
-          </span>
+        <div className="flex items-center gap-3">
+          <a
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex h-9 items-center gap-1.5 rounded-md bg-primary px-3 text-xs font-semibold text-primary-foreground transition-all hover:-translate-y-0.5"
+          >
+            {t("openLink")}
+            <ExternalLink className="h-3.5 w-3.5" />
+          </a>
+          <div className="flex flex-col items-center gap-1">
+            <img
+              src={qr}
+              alt={`QR for ${url}`}
+              width={56}
+              height={56}
+              className="rounded-md border border-border bg-white p-0.5"
+            />
+            <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
+              {t("scan")}
+            </span>
+          </div>
         </div>
-      </div>
     </div>
   );
 }
