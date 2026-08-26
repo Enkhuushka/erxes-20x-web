@@ -19,8 +19,6 @@ const dayLinks = [
 
 const pageLinks = [
   { key: "about", slug: "about" },
-  { key: "services", slug: "services" },
-  { key: "team", slug: "team" },
   { key: "contact", slug: "contact" },
 ];
 
