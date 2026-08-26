@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, Check, Copy, CheckCheck, ExternalLink } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, CheckCheck, ExternalLink } from "lucide-react";
 
 export type Lesson = {
   title: string;
@@ -179,69 +179,39 @@ function LessonCard({ index, lesson }: { index: number; lesson: Lesson }) {
 }
 
 function CodeBlock({ code }: { code: string }) {
-  const t = useTranslations("dayPage");
-  const [copied, setCopied] = useState(false);
-
-  const copy = async () => {
-    try {
-      await navigator.clipboard.writeText(code);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
-    } catch {
-      // ignore
-    }
-  };
-
   const lines = code.split("\n").map((line) => {
     const match = line.match(/(https?:\/\/[^\s]+)/);
     return { text: line, url: match ? match[1] : null };
   });
   const hasUrl = lines.some((l) => l.url);
 
-  return (
-    <div className="overflow-hidden rounded-[10px] border border-border bg-background">
-      <div className="flex items-center justify-between border-b border-border px-3 py-2">
-        <span className="font-mono text-xs text-muted-foreground">command.sh</span>
-        <button
-          type="button"
-          onClick={copy}
-          className="inline-flex items-center gap-1 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground"
-        >
-          {copied ? (
-            <>
-              <CheckCheck className="h-3.5 w-3.5" />
-              {t("copied")}
-            </>
-          ) : (
-            <>
-              <Copy className="h-3.5 w-3.5" />
-              {t("copy")}
-            </>
-          )}
-        </button>
-      </div>
-      <div className="p-4">
-        {hasUrl ? (
-          <div className="space-y-3">
-            {lines.map((line, i) =>
-              line.url ? (
-                <UrlRow key={i} text={line.text} url={line.url} />
-              ) : line.text ? (
-                <pre
-                  key={i}
-                  className="overflow-x-auto font-mono text-sm text-foreground"
-                >
-                  <code>{line.text}</code>
-                </pre>
-              ) : null
-            )}
-          </div>
-        ) : (
-          <pre className="overflow-x-auto font-mono text-sm text-foreground">
-            <code>{code}</code>
-          </pre>
+  if (hasUrl) {
+    return (
+      <div className="space-y-3 rounded-[10px] border border-border bg-background p-4">
+        {lines.map((line, i) =>
+          line.url ? (
+            <UrlRow key={i} text={line.text} url={line.url} />
+          ) : line.text ? (
+            <pre
+              key={i}
+              className="overflow-x-auto font-mono text-sm text-foreground"
+            >
+              <code>{line.text}</code>
+            </pre>
+          ) : null
         )}
       </div>
+    );
+  }
+
+  return (
+    <div className="overflow-hidden rounded-[10px] border border-border bg-background">
+      <div className="border-b border-border px-3 py-2">
+        <span className="font-mono text-xs text-muted-foreground">command.sh</span>
+      </div>
+      <pre className="overflow-x-auto p-4 font-mono text-sm text-foreground">
+        <code>{code}</code>
+      </pre>
     </div>
   );
 }
