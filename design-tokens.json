@@ -20,7 +20,13 @@
       "lineSoft": "#222230",
       "ink": "#f5f5f5",
       "muted": "#adadb8",
-      "dim": "#777777"
+      "dim": "#777777",
+      "lightBg": "#f8f7fc",
+      "lightBgSoft": "#f2f0f9",
+      "lightPanel": "#ffffff",
+      "lightLine": "#ddd8eb",
+      "lightInk": "#1a1523",
+      "lightMuted": "#6b6576"
     },
     "semantic": {
       "background": "#0a0a12",
