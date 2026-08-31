@@ -301,7 +301,7 @@ function Agenda({ day }: { day: DayData }) {
 function UrlRow({ text, url }: { text: string; url: string }) {
   const t = useTranslations("dayPage");
   const isDiscord = url.includes("discord.gg");
-  const qr = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(
+  const qr = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(
     url
   )}`;
   const label = text.split(" → ")[0] || "";
@@ -332,20 +332,20 @@ function UrlRow({ text, url }: { text: string; url: string }) {
           {t("openLink")}
           <ExternalLink className="h-3.5 w-3.5" />
         </a>
-        {isDiscord && (
-          <div className="flex flex-col items-center gap-1">
-            <img
-              src={qr}
-              alt={`QR for ${url}`}
-              width={120}
-              height={120}
-              className="rounded-lg border border-border bg-white p-1"
-            />
-            <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
-              {t("scan")}
-            </span>
-          </div>
-        )}
+          {isDiscord && (
+            <div className="flex flex-col items-center gap-2">
+              <img
+                src={qr}
+                alt={`QR for ${url}`}
+                width={180}
+                height={180}
+                className="rounded-xl border border-border bg-white p-1"
+              />
+              <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
+                {t("scan")}
+              </span>
+            </div>
+          )}
       </div>
     </div>
   );
