@@ -39,7 +39,7 @@ export default function DayPage({ day }: { day: DayData }) {
       <div className="mx-auto max-w-[1240px]">
         <Link
           href={`/${locale}`}
-          className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          className="mb-6 inline-flex items-center gap-2 text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
         >
           <ArrowLeft className="h-4 w-4" />
           {t("back")}
@@ -56,7 +56,7 @@ export default function DayPage({ day }: { day: DayData }) {
                   <a
                     key={i}
                     href={`#lesson-${i + 1}`}
-                    className="block rounded-md px-2 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                    className="block rounded-md px-2 py-1.5 text-base text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                   >
                     {i + 1}. {lesson.title}
                   </a>
@@ -84,7 +84,7 @@ export default function DayPage({ day }: { day: DayData }) {
               </h1>
               <div className="rounded-[10px] border border-primary/30 bg-primary/10 p-4">
                 <p className="text-sm font-semibold text-primary">{t("outcome")}</p>
-                <p className="mt-1 text-muted-foreground">{day.outcome}</p>
+                <p className="mt-1 text-base text-muted-foreground">{day.outcome}</p>
               </div>
             </motion.div>
 
@@ -163,7 +163,7 @@ function LessonCard({ index, lesson }: { index: number; lesson: Lesson }) {
         </button>
       </div>
 
-      <p className="mb-5 text-sm leading-relaxed text-muted-foreground">
+      <p className="mb-5 text-lg leading-relaxed text-muted-foreground">
         {lesson.desc}
       </p>
 
@@ -176,8 +176,8 @@ function LessonCard({ index, lesson }: { index: number; lesson: Lesson }) {
           </p>
           <ul className="space-y-2">
             {lesson.checkpoints.map((cp, i) => (
-              <li key={i} className="flex items-start gap-2 text-sm text-foreground">
-                <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rotate-45 bg-primary" />
+              <li key={i} className="flex items-start gap-2 text-base text-foreground">
+                <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rotate-45 bg-primary" />
                 {cp}
               </li>
             ))}
@@ -282,8 +282,8 @@ function Agenda({ day }: { day: DayData }) {
                 <Icon className="h-5 w-5" />
               </span>
               <div className="min-w-0 flex-1">
-                <h3 className="text-base font-bold text-foreground">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.desc}</p>
+                <h3 className="text-lg font-bold text-foreground">{item.title}</h3>
+                <p className="text-base text-muted-foreground">{item.desc}</p>
               </div>
               {item.main && (
                 <span className="hidden rounded bg-primary px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-primary-foreground sm:inline-block">
@@ -301,7 +301,7 @@ function Agenda({ day }: { day: DayData }) {
 function UrlRow({ text, url }: { text: string; url: string }) {
   const t = useTranslations("dayPage");
   const isDiscord = url.includes("discord.gg");
-  const qr = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(
+  const qr = `https://api.qrserver.com/v1/create-qr-code/?size=280x280&data=${encodeURIComponent(
     url
   )}`;
   const label = text.split(" → ")[0] || "";
@@ -316,7 +316,7 @@ function UrlRow({ text, url }: { text: string; url: string }) {
           href={url}
           target="_blank"
           rel="noreferrer"
-          className="mt-0.5 inline-flex items-center gap-1 break-all text-xs font-semibold text-primary transition-colors hover:underline"
+          className="mt-0.5 inline-flex items-center gap-1 break-all text-sm font-semibold text-primary transition-colors hover:underline"
         >
           {url}
           <ExternalLink className="h-3 w-3" />
@@ -327,7 +327,7 @@ function UrlRow({ text, url }: { text: string; url: string }) {
           href={url}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex h-9 items-center gap-1.5 rounded-md bg-primary px-3 text-xs font-semibold text-primary-foreground transition-all hover:-translate-y-0.5"
+          className="inline-flex h-10 items-center gap-1.5 rounded-md bg-primary px-4 text-sm font-semibold text-primary-foreground transition-all hover:-translate-y-0.5"
         >
           {t("openLink")}
           <ExternalLink className="h-3.5 w-3.5" />
@@ -337,11 +337,11 @@ function UrlRow({ text, url }: { text: string; url: string }) {
               <img
                 src={qr}
                 alt={`QR for ${url}`}
-                width={180}
-                height={180}
+                width={240}
+                height={240}
                 className="rounded-xl border border-border bg-white p-1"
               />
-              <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
+              <span className="text-xs uppercase tracking-wider text-muted-foreground">
                 {t("scan")}
               </span>
             </div>
