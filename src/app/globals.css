@@ -73,24 +73,24 @@ html.dark {
 }
 
 html.light {
-  --background: #f8f7fc;
-  --background-soft: #f2f0f9;
-  --foreground: #1a1523;
+  --background: #fafaf9;
+  --background-soft: #f5f5f4;
+  --foreground: #1f2937;
   --card: #ffffff;
-  --card-foreground: #1a1523;
+  --card-foreground: #1f2937;
   --popover: #ffffff;
-  --popover-foreground: #1a1523;
+  --popover-foreground: #1f2937;
   --primary: #d946ef;
   --primary-foreground: #ffffff;
-  --secondary: #ece8f5;
-  --secondary-foreground: #1a1523;
-  --muted: #eeecf6;
-  --muted-foreground: #6b6576;
-  --accent: #9333ea;
+  --secondary: #f3f4f6;
+  --secondary-foreground: #1f2937;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+  --accent: #e11d48;
   --accent-foreground: #ffffff;
-  --border: #ddd8eb;
-  --input: #e3dfef;
-  --ring: #9333ea;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #d946ef;
   --success: #22c55e;
   --warning: #f97316;
   --destructive: #ef4444;
@@ -100,6 +100,8 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.65;
 }
 
 html {

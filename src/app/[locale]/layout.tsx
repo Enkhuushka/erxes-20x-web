@@ -46,7 +46,7 @@ export default async function LocaleLayout({
           <ApolloClientProvider>
             <ThemeProvider
               attribute="class"
-              defaultTheme="dark"
+              defaultTheme="light"
               enableSystem={false}
               disableTransitionOnChange
             >

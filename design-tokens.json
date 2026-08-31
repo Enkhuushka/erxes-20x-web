@@ -21,12 +21,12 @@
       "ink": "#f5f5f5",
       "muted": "#adadb8",
       "dim": "#777777",
-      "lightBg": "#f8f7fc",
-      "lightBgSoft": "#f2f0f9",
+      "lightBg": "#fafaf9",
+      "lightBgSoft": "#f5f5f4",
       "lightPanel": "#ffffff",
-      "lightLine": "#ddd8eb",
-      "lightInk": "#1a1523",
-      "lightMuted": "#6b6576"
+      "lightLine": "#e5e7eb",
+      "lightInk": "#1f2937",
+      "lightMuted": "#6b7280"
     },
     "semantic": {
       "background": "#0a0a12",
@@ -62,8 +62,8 @@
       "h1": "clamp(46px, 6vw, 78px)",
       "h2": "clamp(34px, 4vw, 54px)",
       "h3": "25px",
-      "body": "15px",
-      "small": "12px",
+      "body": "17px",
+      "small": "13px",
       "eyebrow": "10px"
     }
   },
