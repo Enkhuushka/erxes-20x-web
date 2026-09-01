@@ -18,6 +18,7 @@ export type Lesson = {
   desc: string;
   code?: string;
   checkpoints?: string[];
+  note?: string;
 };
 
 export type DayData = {
@@ -168,6 +169,12 @@ function LessonCard({ index, lesson }: { index: number; lesson: Lesson }) {
       </p>
 
       {lesson.code && <CodeBlock code={lesson.code} />}
+
+      {lesson.note && (
+        <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+          {lesson.note}
+        </p>
+      )}
 
       {lesson.checkpoints && lesson.checkpoints.length > 0 && (
         <div className="mt-5 rounded-[10px] bg-background-soft p-4">
