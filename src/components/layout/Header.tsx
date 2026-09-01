@@ -28,7 +28,14 @@ export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  const toggleLang = locale === "mn" ? "/en" + pathname : "/mn" + pathname;
+  const localePrefix = `/${locale}`;
+  const pathWithoutLocale = pathname.startsWith(localePrefix + "/")
+    ? pathname.slice(localePrefix.length)
+    : pathname === localePrefix
+    ? "/"
+    : pathname;
+
+  const toggleLang = locale === "mn" ? "/en" + pathWithoutLocale : "/mn" + pathWithoutLocale;
 
   const isActive = (path: string) => pathname === `/${locale}${path}`;
 
