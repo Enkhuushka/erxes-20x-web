@@ -118,6 +118,14 @@
     "emailLabel": "И-мэйл",
     "phoneLabel": "Утас"
   },
+  "wifi": {
+    "eyebrow": "СУРГАЛТЫН WIFI",
+    "title": "Танхимын сүлжээнд холбогдох",
+    "ssidLabel": "Сүлжээ",
+    "passwordLabel": "Нууц үг",
+    "ssid": "erxes Mongolia",
+    "password": "ErxeS$9999"
+  },
   "architecture": {
     "eyebrow": "STACK · OPEN SOURCE · SKILL-BASED · CLOUD-NATIVE",
     "title": "20x Marketer Архитектур",

@@ -118,6 +118,14 @@
     "emailLabel": "Email",
     "phoneLabel": "Phone"
   },
+  "wifi": {
+    "eyebrow": "EVENT WIFI",
+    "title": "Connect to the venue network",
+    "ssidLabel": "Network",
+    "passwordLabel": "Password",
+    "ssid": "erxes Mongolia",
+    "password": "ErxeS$9999"
+  },
   "architecture": {
     "eyebrow": "STACK · OPEN SOURCE · SKILL-BASED · CLOUD-NATIVE",
     "title": "20x Marketer Architecture",
