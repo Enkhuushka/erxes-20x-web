@@ -15,7 +15,8 @@ export type AgendaItem = {
 
 export type LessonNote = {
   title: string;
-  text: string;
+  text?: string;
+  bullets?: string[];
 };
 
 export type Lesson = {
@@ -192,8 +193,18 @@ function LessonCard({ index, lesson }: { index: number; lesson: Lesson }) {
             <div className="grid gap-4 sm:grid-cols-2">
               {lesson.note.map((n, i) => (
                 <div key={i}>
-                  <p className="mb-1 text-base font-bold text-primary">{n.title}</p>
-                  <p className="text-base leading-relaxed text-muted-foreground">{n.text}</p>
+                  <p className="mb-2 text-base font-bold text-primary">{n.title}</p>
+                  {n.text && <p className="mb-3 text-base leading-relaxed text-muted-foreground">{n.text}</p>}
+                  {n.bullets && n.bullets.length > 0 && (
+                    <ul className="space-y-1">
+                      {n.bullets.map((b, j) => (
+                        <li key={j} className="flex items-start gap-2 text-base text-muted-foreground">
+                          <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rotate-45 bg-primary" />
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               ))}
             </div>
