@@ -34,7 +34,16 @@ export const dayDataMn: Record<number, DayData> = {
         title: "Tools install",
         desc: "OpenCode, Pencil хэрэгсэлүүдийг татан суулгах.",
         code: "OpenCode → https://opencode.ai\nPencil → https://www.pencil.dev",
-        note: "OpenCode нь хиймэл оюун ухаанд суурилсан програмчлалын хэрэгсэл бөгөөд код бичих, засварлах, алдаа илрүүлэх болон төслийн файлуудтай ажиллахад хөгжүүлэгчдэд тусалдаг. Энэ нь програм боловсруулах үйл явцыг хурдан, хялбар болгоход ашиглагдана. Pencil нь хиймэл оюун ухааны тусламжтайгаар веб болон гар утасны аппликейшны UI/UX дизайныг боловсруулах хэрэгсэл юм. Дизайныг визуал байдлаар үүсгэхээс гадна бэлэн дизайныг програмын кодтой холбон хэрэгжүүлэх боломжтой.",
+        note: [
+          {
+            title: "OpenCode",
+            text: "Хиймэл оюун ухаанд суурилсан програмчлалын хэрэгсэл бөгөөд код бичих, засварлах, алдаа илрүүлэх болон төслийн файлуудтай ажиллахад хөгжүүлэгчдэд тусалдаг. Энэ нь програм боловсруулах үйл явцыг хурдан, хялбар болгоход ашиглагдана.",
+          },
+          {
+            title: "Pencil",
+            text: "Хиймэл оюун ухааны тусламжтайгаар веб болон гар утасны аппликейшны UI/UX дизайныг боловсруулах хэрэгсэл юм. Дизайныг визуал байдлаар үүсгэхээс гадна бэлэн дизайныг програмын кодтой холбон хэрэгжүүлэх боломжтой.",
+          },
+        ],
         checkpoints: ["OpenCode суулгасан", "Pencil суулгасан"],
       },
       {
@@ -186,7 +195,16 @@ export const dayDataEn: Record<number, DayData> = {
         title: "Install tools",
         desc: "Download and install OpenCode and Pencil.",
         code: "OpenCode → https://opencode.ai\nPencil → https://www.pencil.dev",
-        note: "OpenCode is an AI-powered coding assistant that helps developers write, edit, debug code and work with project files — making software development faster and easier. Pencil is an AI-powered design tool for building web and mobile UI/UX visuals; it creates designs visually and can connect finished designs to working code.",
+        note: [
+          {
+            title: "OpenCode",
+            text: "An AI-powered coding assistant that helps developers write, edit, debug code and work with project files — making software development faster and easier.",
+          },
+          {
+            title: "Pencil",
+            text: "An AI-powered design tool for building web and mobile UI/UX visuals; it creates designs visually and can connect finished designs to working code.",
+          },
+        ],
         checkpoints: ["Installed OpenCode", "Installed Pencil"],
       },
       {

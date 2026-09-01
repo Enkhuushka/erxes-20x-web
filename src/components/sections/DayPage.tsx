@@ -13,12 +13,17 @@ export type AgendaItem = {
   main?: boolean;
 };
 
+export type LessonNote = {
+  title: string;
+  text: string;
+};
+
 export type Lesson = {
   title: string;
   desc: string;
   code?: string;
   checkpoints?: string[];
-  note?: string;
+  note?: string | LessonNote[];
 };
 
 export type DayData = {
@@ -182,9 +187,20 @@ function LessonCard({ index, lesson }: { index: number; lesson: Lesson }) {
       {lesson.code && <CodeBlock code={lesson.code} />}
 
       {lesson.note && (
-        <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-          {lesson.note}
-        </p>
+        <div className="mt-5 rounded-[16px] border border-border bg-card p-5">
+          {Array.isArray(lesson.note) ? (
+            <div className="grid gap-4 sm:grid-cols-2">
+              {lesson.note.map((n, i) => (
+                <div key={i}>
+                  <p className="mb-1 text-base font-bold text-primary">{n.title}</p>
+                  <p className="text-base leading-relaxed text-muted-foreground">{n.text}</p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-base leading-relaxed text-muted-foreground">{lesson.note}</p>
+          )}
+        </div>
       )}
 
       {lesson.checkpoints && lesson.checkpoints.length > 0 && (
