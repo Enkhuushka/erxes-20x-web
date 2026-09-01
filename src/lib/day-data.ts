@@ -52,8 +52,6 @@ export const dayDataMn: Record<number, DayData> = {
     agenda: [
       { title: "PRD/BRD бичих", desc: "Бүтээгдэхүүний шаардлага · use case", icon: "file" },
       { title: "UI/UX + Pencil · MCP", desc: "Дизайн систем · components", icon: "palette" },
-      { title: "Front-end development", desc: "Front-end · polish · iterate", icon: "code" },
-      { title: "GitHub deploy", desc: "Сайтаар нийтлэх · CI/CD", icon: "rocket" },
       { title: "Design.md", desc: "Reference · style guide", icon: "file-code", main: true },
     ],
     lessons: [
@@ -68,18 +66,6 @@ export const dayDataMn: Record<number, DayData> = {
         desc: "Дизайн систем, components, Pencil ашиглан homepage direction, visual direction сонгох.",
         code: "https://styles.refero.design/\nPencil → https://www.pencil.dev",
         checkpoints: ["UX/UI research хийсэн", "Visual direction сонгосон", "Pencil дээр homepage direction эхлүүлсэн"],
-      },
-      {
-        title: "Front-end development",
-        desc: "Сонгосон дизайны дагуу front-end бүтээх, polish, iterate хийх.",
-        code: "# Next.js project ажиллуулах\npnpm install\npnpm dev",
-        checkpoints: ["Next.js project ажиллуулсан", "Hero + section component бичсэн", "Polish / iterate хийсэн"],
-      },
-      {
-        title: "GitHub deploy",
-        desc: "Бүтээсэн сайтаа GitHub push хийгээд Vercel дээр deploy хийх, CI/CD танилцах.",
-        code: "git add .\ngit commit -m \"Day 2 build\"\ngit push origin main\n# Vercel dashboard-аас deploy хянах",
-        checkpoints: ["GitHub repo үүсгэсэн", "Push хийсэн", "Vercel deploy амжилттай"],
       },
       {
         title: "Design.md",
@@ -218,8 +204,6 @@ export const dayDataEn: Record<number, DayData> = {
     agenda: [
       { title: "Write PRD/BRD", desc: "Product requirements · use case", icon: "file" },
       { title: "UI/UX + Pencil · MCP", desc: "Design system · components", icon: "palette" },
-      { title: "Front-end development", desc: "Build · polish · iterate", icon: "code" },
-      { title: "GitHub deploy", desc: "Publish site · CI/CD", icon: "rocket" },
       { title: "Design.md", desc: "Reference · style guide", icon: "file-code", main: true },
     ],
     lessons: [
@@ -234,18 +218,6 @@ export const dayDataEn: Record<number, DayData> = {
         desc: "Design system, components, use Pencil to create homepage directions and pick a visual direction. Reference:",
         code: "https://styles.refero.design/\nPencil → https://www.pencil.dev",
         checkpoints: ["Did UX/UI research", "Chose a visual direction", "Started homepage directions in Pencil"],
-      },
-      {
-        title: "Front-end development",
-        desc: "Build the front-end based on the chosen design, then polish and iterate.",
-        code: "# Run the Next.js project\npnpm install\npnpm dev",
-        checkpoints: ["Ran Next.js project", "Built hero + section components", "Polished and iterated"],
-      },
-      {
-        title: "GitHub deploy",
-        desc: "Push your site to GitHub and deploy to Vercel, learn CI/CD basics.",
-        code: "git add .\ngit commit -m \"Day 2 build\"\ngit push origin main\n# Monitor deploy from Vercel dashboard",
-        checkpoints: ["Created GitHub repo", "Pushed code", "Successful Vercel deploy"],
       },
       {
         title: "Design.md",

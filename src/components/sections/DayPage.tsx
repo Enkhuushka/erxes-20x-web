@@ -131,6 +131,17 @@ export default function DayPage({ day }: { day: DayData }) {
 function LessonCard({ index, lesson }: { index: number; lesson: Lesson }) {
   const t = useTranslations("dayPage");
   const [completed, setCompleted] = useState(false);
+  const [checked, setChecked] = useState<boolean[]>(
+    () => new Array(lesson.checkpoints?.length || 0).fill(false)
+  );
+
+  const toggleCheckpoint = (i: number) => {
+    setChecked((prev) => {
+      const next = [...prev];
+      next[i] = !next[i];
+      return next;
+    });
+  };
 
   return (
     <motion.article
@@ -182,12 +193,28 @@ function LessonCard({ index, lesson }: { index: number; lesson: Lesson }) {
             {t("checkpoint")}
           </p>
           <ul className="space-y-2">
-            {lesson.checkpoints.map((cp, i) => (
-              <li key={i} className="flex items-start gap-2 text-base text-foreground">
-                <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rotate-45 bg-primary" />
-                {cp}
-              </li>
-            ))}
+            {lesson.checkpoints?.map((cp, i) => {
+              const isChecked = checked[i];
+              return (
+                <li key={i} className="flex items-start gap-3 text-base text-foreground">
+                  <button
+                    type="button"
+                    onClick={() => toggleCheckpoint(i)}
+                    className={`mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded border transition-colors ${
+                      isChecked
+                        ? "border-primary bg-primary text-primary-foreground"
+                        : "border-border bg-background hover:border-primary/50"
+                    }`}
+                    aria-label={t("complete")}
+                  >
+                    {isChecked && <Check className="h-3.5 w-3.5" />}
+                  </button>
+                  <span className={isChecked ? "text-muted-foreground line-through" : ""}>
+                    {cp}
+                  </span>
+                </li>
+              );
+            })}
           </ul>
         </div>
       )}
