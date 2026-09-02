@@ -215,7 +215,6 @@ export const dayDataMn: Record<number, DayData> = {
       {
         title: "Deploy to Vercel",
         desc: "erxes Skills deploy script ашиглан Vercel дээр deploy хийх. Command-ийг core/web хавтаснаас ажиллуулна.",
-        code: "# Жишээ: site нэр нь erxes-20x-web\ncd content-plugin/headless/core/web\ncorepack pnpm run deploy \"erxes-20x-web\"",
         note: "Vercel гэдэг нь хийсэн website-аа интернетэд гаргаж, бусад хүмүүст URL линкээр үзүүлэх үйлчилгээ юм. Ялангуяа React, Next.js зэрэг frontend website-уудыг маш амархан deploy хийдэг.",
         checkpoints: ["Deploy script ажиллуулсан", "Vercel deploy амжилттай", "Live URL авсан"],
       },
@@ -488,7 +487,6 @@ export const dayDataEn: Record<number, DayData> = {
       {
         title: "Deploy to Vercel",
         desc: "Run the erxes Skills deploy script from the core/web directory to deploy to Vercel.",
-        code: "# Example: site name is erxes-20x-web\ncd content-plugin/headless/core/web\ncorepack pnpm run deploy \"erxes-20x-web\"",
         note: "Vercel is a service that puts your finished website on the internet so others can view it through a URL link. It is especially easy for deploying frontend websites built with React, Next.js, and similar frameworks.",
         checkpoints: ["Ran deploy script", "Vercel deploy succeeded", "Got live URL"],
       },
