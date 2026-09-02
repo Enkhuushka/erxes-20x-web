@@ -189,7 +189,7 @@ export const dayDataMn: Record<number, DayData> = {
       {
         title: "Бүртгэл",
         desc: "Сургалтад бүртгүүлэхдээ доорх QR-ийг уншуулна уу.",
-        qrUrl: "https://docs.google.com/forms/d/1JU-kz0Sfx6k_6cXRkcnUZHfuauGxicaofejRm0sYQtk/edit",
+        qrUrl: "https://docs.google.com/forms/d/1JU-kz0Sfx6k_6cXRkcnUZHfuauGxicaofejRm0sYQtk/viewform",
         checkpoints: ["Бүртгэлийн QR-ийг уншуулсан", "Бүртгэлээ баталгаажуулсан"],
       },
     ],
@@ -460,7 +460,7 @@ export const dayDataEn: Record<number, DayData> = {
       {
         title: "Registration",
         desc: "Scan the QR code below to register for the course.",
-        qrUrl: "https://docs.google.com/forms/d/1JU-kz0Sfx6k_6cXRkcnUZHfuauGxicaofejRm0sYQtk/edit",
+        qrUrl: "https://docs.google.com/forms/d/1JU-kz0Sfx6k_6cXRkcnUZHfuauGxicaofejRm0sYQtk/viewform",
         checkpoints: ["Scanned the registration QR", "Confirmed registration"],
       },
     ],
