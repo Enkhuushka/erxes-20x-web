@@ -95,6 +95,8 @@
     "copied": "Copied",
     "openLink": "Open",
     "scan": "Scan QR",
+    "scanToRegister": "Registration QR",
+    "scanQr": "Scan this QR code with your phone to register",
     "agendaEyebrow": "TODAY · DAY 0{day} AGENDA",
     "agendaTitle": "What will you do today?",
     "agendaLead": "Welcome. From setup to running your first erxes AI Skill.",

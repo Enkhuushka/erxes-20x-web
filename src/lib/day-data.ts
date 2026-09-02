@@ -186,6 +186,12 @@ export const dayDataMn: Record<number, DayData> = {
         ],
         checkpoints: ["Тохиргооны талбаруудыг танилцсан", "site.config.json-ийн утгыг ойлгосон"],
       },
+      {
+        title: "Бүртгэл",
+        desc: "Сургалтад бүртгүүлэхдээ доорх QR-ийг уншуулна уу.",
+        qrUrl: "https://docs.google.com/forms/d/1JU-kz0Sfx6k_6cXRkcnUZHfuauGxicaofejRm0sYQtk/edit",
+        checkpoints: ["Бүртгэлийн QR-ийг уншуулсан", "Бүртгэлээ баталгаажуулсан"],
+      },
     ],
   },
   3: {
@@ -450,6 +456,12 @@ export const dayDataEn: Record<number, DayData> = {
           },
         ],
         checkpoints: ["Reviewed all setup fields", "Understood site.config.json values"],
+      },
+      {
+        title: "Registration",
+        desc: "Scan the QR code below to register for the course.",
+        qrUrl: "https://docs.google.com/forms/d/1JU-kz0Sfx6k_6cXRkcnUZHfuauGxicaofejRm0sYQtk/edit",
+        checkpoints: ["Scanned the registration QR", "Confirmed registration"],
       },
     ],
   },

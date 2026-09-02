@@ -25,6 +25,7 @@ export type Lesson = {
   code?: string;
   checkpoints?: string[];
   note?: string | LessonNote[];
+  qrUrl?: string;
 };
 
 export type DayData = {
@@ -245,7 +246,41 @@ function LessonCard({ index, lesson }: { index: number; lesson: Lesson }) {
           </ul>
         </div>
       )}
+
+      {lesson.qrUrl && <QrCard url={lesson.qrUrl} />}
     </motion.article>
+  );
+}
+
+function QrCard({ url }: { url: string }) {
+  const t = useTranslations("dayPage");
+  const qr = `https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=${encodeURIComponent(
+    url
+  )}`;
+
+  return (
+    <div className="mt-6 rounded-[20px] border border-primary/30 bg-primary/5 p-6 text-center">
+      <p className="mb-4 text-lg font-bold text-foreground">{t("scanToRegister")}</p>
+      <a
+        href={url}
+        target="_blank"
+        rel="noreferrer"
+        className="mb-4 inline-flex items-center gap-2 text-base font-semibold text-primary transition-colors hover:underline"
+      >
+        {url}
+        <ExternalLink className="h-4 w-4" />
+      </a>
+      <div className="flex justify-center">
+        <img
+          src={qr}
+          alt="Registration QR"
+          width={280}
+          height={280}
+          className="rounded-2xl border-4 border-border bg-white p-2 shadow-[0_0_40px_rgba(224,86,253,0.15)]"
+        />
+      </div>
+      <p className="mt-4 text-sm text-muted-foreground">{t("scanQr")}</p>
+    </div>
   );
 }
 
