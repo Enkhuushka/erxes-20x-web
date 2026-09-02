@@ -189,19 +189,29 @@ function LessonCard({ index, lesson }: { index: number; lesson: Lesson }) {
       {lesson.code && <CodeBlock code={lesson.code} />}
 
       {lesson.note && (
-        <div className="mt-5 rounded-[16px] border border-border bg-card p-5">
+        <div className="mt-6 rounded-[20px] border border-border bg-card p-6">
           {Array.isArray(lesson.note) ? (
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="space-y-4">
               {lesson.note.map((n, i) => (
-                <div key={i}>
-                  <p className="mb-2 text-base font-bold text-primary">{n.title}</p>
-                  {n.text && <p className="mb-3 text-base leading-relaxed text-muted-foreground">{n.text}</p>}
+                <div
+                  key={i}
+                  className="rounded-[14px] border-l-4 border-l-primary bg-background-soft p-5 transition-colors hover:bg-background"
+                >
+                  <div className="mb-3 flex items-center gap-3">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-foreground">
+                      {i + 1}
+                    </span>
+                    <p className="text-lg font-bold text-foreground">{n.title}</p>
+                  </div>
+                  {n.text && (
+                    <p className="mb-3 text-base leading-relaxed text-muted-foreground">{n.text}</p>
+                  )}
                   {n.bullets && n.bullets.length > 0 && (
-                    <ul className="space-y-1">
+                    <ul className="grid gap-2 sm:grid-cols-2">
                       {n.bullets.map((b, j) => (
-                        <li key={j} className="flex items-start gap-2 text-base text-muted-foreground">
-                          <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rotate-45 bg-primary" />
-                          {b}
+                        <li key={j} className="flex items-start gap-2 text-base text-foreground">
+                          <Check className="mt-1 h-4 w-4 flex-shrink-0 text-primary" />
+                          <span className="leading-snug">{b}</span>
                         </li>
                       ))}
                     </ul>
