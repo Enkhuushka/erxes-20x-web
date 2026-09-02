@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Check, CheckCheck, ExternalLink, Play, MessageCircle, Globe, Wrench, Puzzle, FileText, Palette, Code, Rocket, FileCode } from "lucide-react";
+import DeployWorkflow from "@/components/sections/DeployWorkflow";
 
 export type AgendaItem = {
   title: string;
@@ -103,6 +104,8 @@ export default function DayPage({ day }: { day: DayData }) {
                 <LessonCard key={i} index={i} lesson={lesson} />
               ))}
             </div>
+
+            {day.id === 3 && <DeployWorkflow />}
 
             <div className="flex items-center justify-between">
               {prev ? (
