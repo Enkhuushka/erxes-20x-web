@@ -274,15 +274,6 @@ function QrCard({ url }: { url: string }) {
   return (
     <div className="mt-6 rounded-[20px] border border-primary/30 bg-primary/5 p-6 text-center">
       <p className="mb-4 text-lg font-bold text-foreground">{t("scanToRegister")}</p>
-      <a
-        href={url}
-        target="_blank"
-        rel="noreferrer"
-        className="mb-4 inline-flex items-center gap-2 text-base font-semibold text-primary transition-colors hover:underline"
-      >
-        {url}
-        <ExternalLink className="h-4 w-4" />
-      </a>
       <div className="flex justify-center">
         <img
           src={qr}
