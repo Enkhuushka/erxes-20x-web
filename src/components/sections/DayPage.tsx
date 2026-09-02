@@ -2,9 +2,8 @@
 
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, Check, CheckCheck, ExternalLink, Play, MessageCircle, Globe, Wrench, Puzzle, FileText, Palette, Code, Rocket, FileCode } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, ExternalLink, Play, MessageCircle, Globe, Wrench, Puzzle, FileText, Palette, Code, Rocket, FileCode } from "lucide-react";
 import DeployWorkflow from "@/components/sections/DeployWorkflow";
 
 export type AgendaItem = {
@@ -140,7 +139,6 @@ export default function DayPage({ day }: { day: DayData }) {
 
 function LessonCard({ index, lesson }: { index: number; lesson: Lesson }) {
   const t = useTranslations("dayPage");
-  const [completed, setCompleted] = useState(false);
 
   return (
     <motion.article
@@ -151,28 +149,14 @@ function LessonCard({ index, lesson }: { index: number; lesson: Lesson }) {
       transition={{ duration: 0.4, delay: index * 0.05 }}
       className="rounded-[16px] border border-border bg-card p-6 transition-all hover:border-[#545454]"
     >
-      <div className="mb-4 flex items-start justify-between gap-4">
-        <div>
-          <span className="mb-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-secondary font-mono text-xs font-bold text-secondary-foreground">
+        <div className="mb-4 flex items-start gap-4">
+          <span className="mb-1 inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-secondary font-mono text-xs font-bold text-secondary-foreground">
             {index + 1}
           </span>
-          <h3 className="mt-2 text-xl font-semibold text-foreground">
+          <h3 className="text-xl font-semibold text-foreground">
             {lesson.title}
           </h3>
         </div>
-        <button
-          type="button"
-          onClick={() => setCompleted((c) => !c)}
-          className={`inline-flex h-9 items-center gap-2 rounded-[10px] px-3 text-xs font-semibold transition-all ${
-            completed
-              ? "bg-success text-background"
-              : "border border-border bg-secondary text-secondary-foreground hover:bg-muted"
-          }`}
-        >
-          {completed ? <CheckCheck className="h-4 w-4" /> : <Check className="h-4 w-4" />}
-          {completed ? t("completed") : t("complete")}
-        </button>
-      </div>
 
       <p className="mb-5 text-lg leading-relaxed text-muted-foreground">
         {lesson.desc}

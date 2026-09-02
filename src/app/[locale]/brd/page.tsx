@@ -172,6 +172,32 @@ export default async function BrdPage({
             );
           })}
         </div>
+
+        <div className="mt-6 rounded-[16px] border-l-4 border-l-primary bg-card p-6">
+          <h2 className="mb-3 text-lg font-bold text-foreground">
+            {locale === "mn" ? "Жишээ BRD файлууд" : "Example BRD files"}
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <a
+              href="https://stormy-ginger-kwdr.here.now/"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-between rounded-[12px] border border-border bg-background p-4 transition-colors hover:border-primary/50 hover:bg-background-soft"
+            >
+              <span className="text-base font-semibold text-foreground">Example 1</span>
+              <span className="text-sm text-primary">Open ↗</span>
+            </a>
+            <a
+              href="https://eager-ether-dztm.here.now/"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-between rounded-[12px] border border-border bg-background p-4 transition-colors hover:border-primary/50 hover:bg-background-soft"
+            >
+              <span className="text-base font-semibold text-foreground">Example 2</span>
+              <span className="text-sm text-primary">Open ↗</span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );
