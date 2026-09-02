@@ -77,12 +77,6 @@ export const dayDataMn: Record<number, DayData> = {
         checkpoints: ["UX/UI research хийсэн", "Visual direction сонгосон", "Pencil дээр homepage direction эхлүүлсэн"],
       },
       {
-        title: "Design.md",
-        desc: "Design.md file-аа бэлдэж, styles.refero.design-аас reference авах.",
-        code: "https://styles.refero.design/",
-        checkpoints: ["Design.md үүсгэсэн", "Color / typography тодорхойлсон", "Reference холбоос хадгалсан"],
-      },
-      {
         title: "Site setup config",
         desc: "erxes Skills ашиглан шинэ сайт үүсгэхэд бөглөх үндсэн тохиргоонууд.",
         note: [
@@ -185,6 +179,12 @@ export const dayDataMn: Record<number, DayData> = {
           },
         ],
         checkpoints: ["Тохиргооны талбаруудыг танилцсан", "site.config.json-ийн утгыг ойлгосон"],
+      },
+      {
+        title: "Design.md",
+        desc: "Design.md file-аа бэлдэж, styles.refero.design-аас reference авах.",
+        code: "https://styles.refero.design/",
+        checkpoints: ["Design.md үүсгэсэн", "Color / typography тодорхойлсон", "Reference холбоос хадгалсан"],
       },
       {
         title: "Бүртгэл",
@@ -348,12 +348,6 @@ export const dayDataEn: Record<number, DayData> = {
         checkpoints: ["Did UX/UI research", "Chose a visual direction", "Started homepage directions in Pencil"],
       },
       {
-        title: "Design.md",
-        desc: "Prepare your Design.md file and pull references from styles.refero.design.",
-        code: "https://styles.refero.design/",
-        checkpoints: ["Created Design.md", "Defined colors/typography", "Saved reference link"],
-      },
-      {
         title: "Site setup config",
         desc: "Core configuration fields filled when creating a new site with erxes Skills.",
         note: [
@@ -456,6 +450,12 @@ export const dayDataEn: Record<number, DayData> = {
           },
         ],
         checkpoints: ["Reviewed all setup fields", "Understood site.config.json values"],
+      },
+      {
+        title: "Design.md",
+        desc: "Prepare your Design.md file and pull references from styles.refero.design.",
+        code: "https://styles.refero.design/",
+        checkpoints: ["Created Design.md", "Defined colors/typography", "Saved reference link"],
       },
       {
         title: "Registration",
