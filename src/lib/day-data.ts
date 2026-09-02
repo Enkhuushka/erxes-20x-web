@@ -74,6 +74,12 @@ export const dayDataMn: Record<number, DayData> = {
         title: "UI/UX + Pencil · MCP",
         desc: "Дизайн систем, components, Pencil ашиглан homepage direction, visual direction сонгох. Reference:",
         code: "https://styles.refero.design/",
+        note: [
+          {
+            title: "Шинэ сайт бүтээх prompt",
+            text: "Шинэ вэбсайт бүтээж эхлэе. Сайтын нэр: ..., төрөл: business/ecommerce/tour/hotel, дэмжих хэл: mn, en, tone: modern/casual/formal, sections: about, services, contact, design strategy: from-scratch/copy-site/improve-site/brand-first/beat-competitors, UI source: words/pencil/screenshot/website, deploy target: vercel/github. Эхлээд site.config.json үүсгээд erxes CMS-тэй холбож, дараа нь homepage direction-уудыг Pencil дээр бэлд.",
+          },
+        ],
         checkpoints: ["UX/UI research хийсэн", "Visual direction сонгосон", "Pencil дээр homepage direction эхлүүлсэн"],
       },
       {
@@ -345,6 +351,12 @@ export const dayDataEn: Record<number, DayData> = {
         title: "UI/UX + Pencil · MCP",
         desc: "Design system, components, use Pencil to create homepage directions and pick a visual direction. Reference:",
         code: "https://styles.refero.design/",
+        note: [
+          {
+            title: "New website prompt",
+            text: "Let's start creating a new website. Site name: ..., type: business/ecommerce/tour/hotel, languages: mn, en, tone: modern/casual/formal, sections: about, services, contact, design strategy: from-scratch/copy-site/improve-site/brand-first/beat-competitors, UI source: words/pencil/screenshot/website, deploy target: vercel/github. First create site.config.json, connect to erxes CMS, then prepare homepage directions in Pencil.",
+          },
+       ],
         checkpoints: ["Did UX/UI research", "Chose a visual direction", "Started homepage directions in Pencil"],
       },
       {
