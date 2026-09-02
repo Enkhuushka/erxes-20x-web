@@ -72,8 +72,8 @@ export const dayDataMn: Record<number, DayData> = {
       },
       {
         title: "UI/UX + Pencil · MCP",
-        desc: "Дизайн систем, components, Pencil ашиглан homepage direction, visual direction сонгох.",
-        code: "https://styles.refero.design/\nPencil → https://www.pencil.dev",
+        desc: "Дизайн систем, components, Pencil ашиглан homepage direction, visual direction сонгох. Reference:",
+        code: "https://styles.refero.design/\nЖишээ BRD → /brd",
         checkpoints: ["UX/UI research хийсэн", "Visual direction сонгосон", "Pencil дээр homepage direction эхлүүлсэн"],
       },
       {
@@ -344,7 +344,7 @@ export const dayDataEn: Record<number, DayData> = {
       {
         title: "UI/UX + Pencil · MCP",
         desc: "Design system, components, use Pencil to create homepage directions and pick a visual direction. Reference:",
-        code: "https://styles.refero.design/\nPencil → https://www.pencil.dev",
+        code: "https://styles.refero.design/\nExample BRD → /brd",
         checkpoints: ["Did UX/UI research", "Chose a visual direction", "Started homepage directions in Pencil"],
       },
       {
