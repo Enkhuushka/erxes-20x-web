@@ -290,11 +290,17 @@ function QrCard({ url }: { url: string }) {
 
 function CodeBlock({ code }: { code: string }) {
   const lines = code.split("\n").map((line) => {
+    const arrowMatch = line.match(/^(.+?)\s*→\s*(.+)$/);
+    if (arrowMatch) {
+      const label = arrowMatch[1].trim();
+      const url = arrowMatch[2].trim();
+      return { text: `${label} → ${url}`, url, label };
+    }
     const match = line.match(/(https?:\/\/[^\s]+)/);
-    return { text: line, url: match ? match[1] : null };
+    return { text: line, url: match ? match[1] : null, label: null };
   });
   const hasUrl = lines.some((l) => l.url);
-  const urlLines = lines.filter((l): l is { text: string; url: string } => !!l.url);
+  const urlLines = lines.filter((l): l is { text: string; url: string; label: string | null } => !!l.url);
   const nonUrlLines = lines.filter((l) => !l.url && l.text);
   const useGrid = urlLines.length > 1 && nonUrlLines.length === 0;
 
@@ -302,7 +308,7 @@ function CodeBlock({ code }: { code: string }) {
     return (
       <div className={`rounded-[10px] border border-border bg-background p-4 ${useGrid ? "grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3" : "space-y-3"}`}>
         {urlLines.map((line, i) => (
-          <UrlRow key={i} text={line.text} url={line.url} />
+          <UrlRow key={i} text={line.label || line.text} url={line.url} />
         ))}
         {nonUrlLines.map((line, i) => (
           <pre
@@ -400,9 +406,12 @@ function Agenda({ day }: { day: DayData }) {
 
 function UrlRow({ text, url }: { text: string; url: string }) {
   const t = useTranslations("dayPage");
+  const locale = useLocale();
   const isDiscord = url.includes("discord.gg");
+  const isInternal = url.startsWith("/");
+  const displayUrl = isInternal ? `/${locale}${url}` : url;
   const qr = `https://api.qrserver.com/v1/create-qr-code/?size=280x280&data=${encodeURIComponent(
-    url
+    displayUrl
   )}`;
   const label = text.split(" → ")[0] || "";
 
@@ -413,18 +422,18 @@ function UrlRow({ text, url }: { text: string; url: string }) {
           <p className="text-base font-semibold text-foreground">{label}</p>
         ) : null}
         <a
-          href={url}
+          href={displayUrl}
           target="_blank"
           rel="noreferrer"
           className="mt-0.5 inline-flex items-center gap-1 break-all text-sm font-semibold text-primary transition-colors hover:underline"
         >
-          {url}
+          {displayUrl}
           <ExternalLink className="h-3 w-3" />
         </a>
       </div>
       <div className="flex items-center gap-3">
         <a
-          href={url}
+          href={displayUrl}
           target="_blank"
           rel="noreferrer"
           className="inline-flex h-10 items-center gap-1.5 rounded-md bg-primary px-4 text-sm font-semibold text-primary-foreground transition-all hover:-translate-y-0.5"
@@ -436,7 +445,7 @@ function UrlRow({ text, url }: { text: string; url: string }) {
             <div className="flex flex-col items-center gap-2">
               <img
                 src={qr}
-                alt={`QR for ${url}`}
+                alt={`QR for ${displayUrl}`}
                 width={240}
                 height={240}
                 className="rounded-xl border border-border bg-white p-1"

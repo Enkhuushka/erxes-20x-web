@@ -66,8 +66,8 @@ export const dayDataMn: Record<number, DayData> = {
     lessons: [
       {
         title: "PRD/BRD бичих",
-        desc: "Бүтээгдэхүүний шаардлага, use case, sitemap, navigation санаа BRD file дээр бичих. Жишээ BRD file-ууд:",
-        code: "https://stormy-ginger-kwdr.here.now/\nhttps://eager-ether-dztm.here.now/",
+        desc: "Бүтээгдэхүүний шаардлага, use case, sitemap, navigation санаа BRD file дээр бичих. Жишээ BRD file:",
+        code: "Жишээ BRD → /brd",
         checkpoints: ["Use case тодорхойлсон", "Sitemap / navigation бичсэн", "BRD холбоосыг хадгалсан"],
       },
       {
@@ -337,8 +337,8 @@ export const dayDataEn: Record<number, DayData> = {
     lessons: [
       {
         title: "Write PRD/BRD",
-        desc: "Define product requirements, use cases, sitemap, and navigation ideas in a BRD file. Example BRD files:",
-        code: "https://stormy-ginger-kwdr.here.now/\nhttps://eager-ether-dztm.here.now/",
+        desc: "Define product requirements, use cases, sitemap, and navigation ideas in a BRD file. Example BRD:",
+        code: "Example BRD → /brd",
         checkpoints: ["Defined use cases", "Drafted sitemap/navigation", "Saved BRD link"],
       },
       {
