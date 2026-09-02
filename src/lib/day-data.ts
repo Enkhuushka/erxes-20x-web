@@ -208,7 +208,6 @@ export const dayDataMn: Record<number, DayData> = {
       {
         title: "GitHub push",
         desc: "Бүтээсэн сайтаа GitHub repo руу push хийх.",
-        code: "git add .\ngit commit -m \"Day 3 build\"\ngit push origin main",
         note: "GitHub гэдэг нь кодоо интернет дээр хадгалах, өөрчлөлтөө бүртгэх, бусадтай хамтран ажиллах газар юм. Жишээ нь чи website хийж байгаа бол HTML, CSS, JavaScript, React зэрэг кодоо GitHub дээр байршуулна. Ингэснээр өмнөх хувилбарууд руугаа буцах, өөр компьютерээс кодоо авах, багийн хүнтэйгээ хамт засах боломжтой.",
         checkpoints: ["GitHub repo үүсгэсэн", "Push хийсэн", "Branch хяналт шалгасан"],
       },
@@ -480,7 +479,6 @@ export const dayDataEn: Record<number, DayData> = {
       {
         title: "GitHub push",
         desc: "Push your built site to the GitHub repository.",
-        code: "git add .\ngit commit -m \"Day 3 build\"\ngit push origin main",
         note: "GitHub is a place to store your code online, track changes, and collaborate with others. For example, when building a website, you upload your HTML, CSS, JavaScript, React, and other code to GitHub. This lets you go back to previous versions, access your code from another computer, and edit together with your team.",
         checkpoints: ["Created GitHub repo", "Pushed code", "Checked branch status"],
       },
