@@ -202,7 +202,6 @@ export const dayDataMn: Record<number, DayData> = {
       {
         title: "Front-end development",
         desc: "Сонгосон дизайны дагуу front-end бүтээх, polish, iterate хийх.",
-        code: "# Next.js project ажиллуулах\ncd output/<site-name>\ncorepack pnpm install\ncorepack pnpm dev",
         checkpoints: ["Next.js project ажиллуулсан", "Hero + section component бичсэн", "Polish / iterate хийсэн"],
       },
       {
@@ -473,7 +472,6 @@ export const dayDataEn: Record<number, DayData> = {
       {
         title: "Front-end development",
         desc: "Build the front-end based on the chosen design, then polish and iterate.",
-        code: "# Run the Next.js project\ncd output/<site-name>\ncorepack pnpm install\ncorepack pnpm dev",
         checkpoints: ["Ran Next.js project", "Built hero + section components", "Polished and iterated"],
       },
       {
