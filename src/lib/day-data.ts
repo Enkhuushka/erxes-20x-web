@@ -220,53 +220,13 @@ export const dayDataMn: Record<number, DayData> = {
   },
   4: {
     id: 4,
-    title: "Showoff — Live demo session",
-    outcome: "Бүтээсэн сайтаа тайлбарлан demo хийх.",
-    lessons: [
-      {
-        title: "Ticket management",
-        desc: "Ирсэн хүсэлтийг ticket болгон хувиарлах, SLA тохируулах.",
-        code: "erxes ticket create --subject \"Login issue\" --priority high",
-        checkpoints: ["Ticket үүсгэсэн", "Priority SLA тохируулсан", "Assign хийсэн"],
-      },
-      {
-        title: "Knowledge base",
-        desc: "Мэдлэгийн сан үүсгэх, category/article бүтээх.",
-        code: "erxes kb create --category \"FAQ\" --article \"How to reset password\"",
-        checkpoints: ["Category үүсгэсэн", "Article бичсэн", "Publish хийсэн"],
-      },
-      {
-        title: "Chatbot холболт",
-        desc: "Messenger, website chatbot холбох, авто хариу бичих.",
-        code: "erxes integration create --kind messenger --name \"Website Chat\"",
-        checkpoints: ["Integration үүсгэсэн", "Script embed хийсэн", "Auto-reply тохируулсан"],
-      },
-    ],
+    title: "Day 4",
+    lessons: [],
   },
   5: {
     id: 5,
-    title: "Graduation — Сертификат · Demo",
-    outcome: "Сертификат авах, эцсийн demo хийх.",
-    lessons: [
-      {
-        title: "Dashboard бүтээх",
-        desc: "Pivot chart, funnel, report widget-үүдийг нэгтгэх.",
-        code: "erxes dashboard create --name \"Sales Overview\" --widgets pipeline,forecast",
-        checkpoints: ["Dashboard үүсгэсэн", "Widget нэмсэн", "Filter тохируулсан"],
-      },
-      {
-        title: "Plugin суулгах",
-        desc: "Marketplace-аас plugin сонгон суулгах, тохиргоо хийх.",
-        code: "erxes plugin install erxes-20x-reports\nerxes plugin enable erxes-20x-reports",
-        checkpoints: ["Plugin сонгосон", "Суулгасан", "Идэвхжүүлсэн"],
-      },
-      {
-        title: "Багт нэвтрүүлэх",
-        desc: "Role, permission, team хуваарьлалт, rollout төлөвлөгөө.",
-        code: "erxes role create --name \"Sales Rep\" --permissions leads,deals",
-        checkpoints: ["Role үүсгэсэн", "Permission олгосон", "Team assign хийсэн"],
-      },
-    ],
+    title: "Day 5",
+    lessons: [],
   },
 };
 
@@ -490,52 +450,12 @@ export const dayDataEn: Record<number, DayData> = {
   },
   4: {
     id: 4,
-    title: "Showoff — Live Demo Session",
-    outcome: "Present and demo the site you built.",
-    lessons: [
-      {
-        title: "Ticket management",
-        desc: "Convert inbound requests into tickets, set priorities and SLAs.",
-        code: "erxes ticket create --subject \"Login issue\" --priority high",
-        checkpoints: ["Created a ticket", "Set SLA", "Assigned to agent"],
-      },
-      {
-        title: "Knowledge base",
-        desc: "Create categories and articles for self-service.",
-        code: "erxes kb create --category \"FAQ\" --article \"How to reset password\"",
-        checkpoints: ["Created category", "Wrote article", "Published"],
-      },
-      {
-        title: "Chatbot integration",
-        desc: "Connect Messenger and website chatbot, set auto replies.",
-        code: "erxes integration create --kind messenger --name \"Website Chat\"",
-        checkpoints: ["Created integration", "Embedded script", "Set auto-reply"],
-      },
-    ],
+    title: "Day 4",
+    lessons: [],
   },
   5: {
     id: 5,
-    title: "Graduation — Certificate · Demo",
-    outcome: "Receive certificate and give final demo.",
-    lessons: [
-      {
-        title: "Build dashboards",
-        desc: "Combine pivot charts, funnels, and report widgets.",
-        code: "erxes dashboard create --name \"Sales Overview\" --widgets pipeline,forecast",
-        checkpoints: ["Created dashboard", "Added widgets", "Set filters"],
-      },
-      {
-        title: "Install plugins",
-        desc: "Choose and install plugins from the marketplace.",
-        code: "erxes plugin install erxes-20x-reports\nerxes plugin enable erxes-20x-reports",
-        checkpoints: ["Selected plugin", "Installed", "Enabled"],
-      },
-      {
-        title: "Team rollout",
-        desc: "Roles, permissions, team assignments, and rollout plan.",
-        code: "erxes role create --name \"Sales Rep\" --permissions leads,deals",
-        checkpoints: ["Created role", "Set permissions", "Assigned team"],
-      },
-    ],
+    title: "Day 5",
+    lessons: [],
   },
 };

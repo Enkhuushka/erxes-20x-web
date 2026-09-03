@@ -31,7 +31,7 @@ export type Lesson = {
 export type DayData = {
   id: number;
   title: string;
-  outcome: string;
+  outcome?: string;
   lessons: Lesson[];
   agenda?: AgendaItem[];
 };
@@ -53,8 +53,12 @@ export default function DayPage({ day }: { day: DayData }) {
           {t("back")}
         </Link>
 
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[280px_1fr]">
-          <aside className="hidden lg:block">
+        <div
+          className={`grid grid-cols-1 gap-8 ${
+            day.lessons.length > 0 ? "lg:grid-cols-[280px_1fr]" : "lg:grid-cols-1"
+          }`}
+        >
+          {day.lessons.length > 0 && <aside className="hidden lg:block">
             <div className="sticky top-28 space-y-4 rounded-[16px] border border-border bg-card p-5">
               <p className="text-xs font-bold uppercase tracking-widest text-primary">
                 {t("day")} {day.id}
@@ -75,7 +79,7 @@ export default function DayPage({ day }: { day: DayData }) {
                 <p className="text-xs font-semibold text-primary">{t("duration")}</p>
               </div>
             </div>
-          </aside>
+          </aside>}
 
           <div>
             <motion.div
@@ -90,10 +94,12 @@ export default function DayPage({ day }: { day: DayData }) {
               <h1 className="mb-4 text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-foreground">
                 {day.title}
               </h1>
-              <div className="rounded-[10px] border border-primary/30 bg-primary/10 p-4">
-                <p className="text-sm font-semibold text-primary">{t("outcome")}</p>
-                <p className="mt-1 text-base text-muted-foreground">{day.outcome}</p>
-              </div>
+              {day.outcome && (
+                <div className="rounded-[10px] border border-primary/30 bg-primary/10 p-4">
+                  <p className="text-sm font-semibold text-primary">{t("outcome")}</p>
+                  <p className="mt-1 text-base text-muted-foreground">{day.outcome}</p>
+                </div>
+              )}
             </motion.div>
 
             {day.agenda && day.agenda.length > 0 && <Agenda day={day} />}
